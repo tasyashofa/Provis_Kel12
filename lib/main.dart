@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
           primary: Color(0xFF810000),
           secondary: Color(0xFFCE1212),
         ),
+        scaffoldBackgroundColor: const Color(0xFFEEEBDD),
       ),
       home: const LoginPage(),
     );

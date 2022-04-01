@@ -18,13 +18,14 @@ class _BerandaPageState extends State<BerandaPage> {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Card(
               child: Padding(
                 padding: EdgeInsets.all(12),
                 child: Column(
                   children: [
+                    Text('Berita'),
                   ],
                 )
               )

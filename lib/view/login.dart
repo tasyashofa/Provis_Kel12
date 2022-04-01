@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'beranda.dart';
+import 'tab_home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({ Key? key }) : super(key: key);
@@ -50,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 12),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => BerandaPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => TabTransitionPage()));
                   }, 
                   child: const Text('Submit')
                 ),
