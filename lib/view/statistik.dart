@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'statistik_alumni.dart';
+import 'statistik_tendik.dart';
 
 class StatistikPage extends StatefulWidget {
   const StatistikPage({ Key? key }) : super(key: key);
@@ -31,12 +33,16 @@ class _StatistikPageState extends State<StatistikPage> {
             ),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikTendikPage()));
+              }, 
               child: const Text('TENAGA KEPENDIDIKAN')
             ),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikAlumniPage()));
+              }, 
               child: const Text('ALUMNI')
             ),
             const SizedBox(height: 12),
