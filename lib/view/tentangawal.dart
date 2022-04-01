@@ -28,11 +28,26 @@ class _TentangPageState extends State<TentangAwalPage> {
                 },
                 child: const Text('UNIVERSITAS')),
             const SizedBox(height: 12),
-            ElevatedButton(onPressed: () {}, child: const Text('FAKULTAS')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TentangPage()));
+                },
+                child: const Text('FAKULTAS')),
             const SizedBox(height: 12),
-            ElevatedButton(onPressed: () {}, child: const Text('DEPARTEMEN')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TentangPage()));
+                },
+                child: const Text('DEPARTEMEN')),
             const SizedBox(height: 12),
-            ElevatedButton(onPressed: () {}, child: const Text('PRODI')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TentangPage()));
+                },
+                child: const Text('PRODI')),
           ],
         ),
       ),
