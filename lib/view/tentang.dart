@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'tentang_sejarah_visi.dart';
 
 class TentangPage extends StatefulWidget {
   const TentangPage({ Key? key }) : super(key: key);
@@ -21,7 +22,9 @@ class _TentangPageState extends State<TentangPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SejarahVisiPage()));
+              }, 
               child: const Text('SEJARAH & VISI MISI')
             ),
             const SizedBox(height: 12),
