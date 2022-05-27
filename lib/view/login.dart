@@ -14,6 +14,8 @@ class _LoginPageState extends State<LoginPage> {
 
   bool onClickLogin = false;
   bool onClickSSO = false;
+  bool isObscureLogin = true;
+  bool isObscureSSO = true;
 
   @override
   Widget build(BuildContext context) {
@@ -36,22 +38,32 @@ class _LoginPageState extends State<LoginPage> {
             if (onClickLogin) Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
+                    filled: true,
                     hintText: 'Username'
                   ),
                 ),
                 const SizedBox(height: 12),
                 TextField(
-                  obscureText: true,
+                  obscureText: isObscureLogin,
                   decoration: InputDecoration(
-                    hintText: 'Password'
+                    filled: true,
+                    hintText: 'Password',
+                    suffix: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          isObscureLogin = !isObscureLogin;
+                        });
+                      },
+                      icon: Icon(!isObscureLogin ? Icons.remove_red_eye : Icons.visibility_off),
+                    )
                   ),
                 ),
                 const SizedBox(height: 12),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => TabTransitionPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const TabTransitionPage()));
                   }, 
                   child: const Text('Submit')
                 ),
@@ -60,21 +72,35 @@ class _LoginPageState extends State<LoginPage> {
             if (onClickSSO) Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
+                    filled: true,
                     hintText: 'NIM'
                   ),
                 ),
                 const SizedBox(height: 12),
                 TextField(
-                  obscureText: true,
+                  obscureText: isObscureSSO,
                   decoration: InputDecoration(
-                    hintText: 'Password'
+                    filled: true,
+                    hintText: 'Password',
+                    suffix: IconButton(
+                      padding: EdgeInsets.zero,
+                      visualDensity: VisualDensity.compact,
+                      onPressed: () {
+                        setState(() {
+                          isObscureSSO = !isObscureSSO;
+                        });
+                      },
+                      icon: Icon(!isObscureSSO ? Icons.remove_red_eye : Icons.visibility_off),
+                    )
                   ),
                 ),
                 const SizedBox(height: 12),
                 ElevatedButton(
-                  onPressed: () {}, 
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const TabTransitionPage()));
+                  }, 
                   child: const Text('Submit')
                 ),
               ]

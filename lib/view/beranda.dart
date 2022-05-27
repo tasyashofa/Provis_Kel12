@@ -15,11 +15,29 @@ class _BerandaPageState extends State<BerandaPage> {
         title: const Text('Beranda'),
         foregroundColor: Colors.white,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            StatefulBuilder(
+              builder: (context, setState) => SizedBox(
+                height: 200,
+                child: PageView.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.primaries[index],
+                        borderRadius: BorderRadius.circular(32)
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ),
+            SizedBox(height: 12),
             Card(
               child: Padding(
                 padding: EdgeInsets.all(12),
