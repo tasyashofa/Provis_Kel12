@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class StatistikUniversitasPage extends StatefulWidget {
-  const StatistikUniversitasPage({ Key? key }) : super(key: key);
+  const StatistikUniversitasPage({Key? key}) : super(key: key);
 
   @override
-  State<StatistikUniversitasPage> createState() => _StatistikUniversitasPageState();
+  State<StatistikUniversitasPage> createState() =>
+      _StatistikUniversitasPageState();
 }
 
 List<BarChartGroupData> barChartGroupData = [
@@ -20,15 +21,6 @@ List<BarChartGroupData> barChartGroupData = [
   ]),
   BarChartGroupData(x: 4, barRods: [
     BarChartRodData(y: 40, colors: [Colors.blue]),
-  ]),
-  BarChartGroupData(x: 5, barRods: [
-    BarChartRodData(y: 50, colors: [Colors.yellow]),
-  ]),
-  BarChartGroupData(x: 6, barRods: [
-    BarChartRodData(y: 23, colors: [Colors.orange]),
-  ]),
-  BarChartGroupData(x: 7, barRods: [
-    BarChartRodData(y: 60, colors: [Colors.pink]),
   ]),
 ];
 
@@ -45,7 +37,9 @@ class _StatistikUniversitasPageState extends State<StatistikUniversitasPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(height: 12,),
+            SizedBox(
+              height: 12,
+            ),
             Card(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -53,8 +47,8 @@ class _StatistikUniversitasPageState extends State<StatistikUniversitasPage> {
                   const ListTile(
                     title: Center(child: Text('Jenis Kelamin')),
                     subtitle: Center(
-                        child: Text(
-                            'Jumlah alumni berdasarkan jenis kelamin.')),
+                        child:
+                            Text('Jumlah alumni berdasarkan jenis kelamin.')),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -98,61 +92,53 @@ class _StatistikUniversitasPageState extends State<StatistikUniversitasPage> {
                 child: Column(
                   children: [
                     ListTile(
-                      title: Center(child: Text('Jumlah Alumni Berdasarkan Fakultas')),
-                     
+                      title: Center(child: Text('Jumlah Mahasiswa')),
                     ),
                     Container(
-                    padding: EdgeInsets.all(30),
-                    width: MediaQuery.of(context).size.width,
-                    height: 250,
-                    child: BarChart(BarChartData(
-                      titlesData: FlTitlesData(
-                        topTitles: SideTitles(showTitles: false),
-                        rightTitles: SideTitles(showTitles: false),
-                        bottomTitles: SideTitles(
-                          showTitles: true,
-                          getTitles: (value) {
-                            switch (value.toInt()) {
-                              case 1:
-                                return 'FPMIPA';
-                              case 2:
-                                return 'FIP';
-                              case 3:
-                                return 'FPIPS';
-                              case 4:
-                                return 'FPSD';
-                              case 5:
-                                return 'FPEB';
-                              case 6:
-                                return 'FPBS';
-                              case 7:
-                                return 'FPOK';
-                            }
-                            return "";
-                          },
-                        ),
-                        leftTitles: SideTitles(
-                          interval: 20,
-                          showTitles: true,
-                          getTitles: (value) {
-                            if (value.toInt() == 0)
-                              return "";
-                            else
-                              return value.toInt().toString();
-                          },
-                        ),
-                      ),
-                      maxY: 100,
-                      borderData: FlBorderData(
-                        show: false,
-                      ),
-                      barGroups: barChartGroupData,
-                    )))
+                        padding: EdgeInsets.all(30),
+                        width: MediaQuery.of(context).size.width,
+                        height: 250,
+                        child: BarChart(BarChartData(
+                          titlesData: FlTitlesData(
+                            topTitles: SideTitles(showTitles: false),
+                            rightTitles: SideTitles(showTitles: false),
+                            bottomTitles: SideTitles(
+                              showTitles: true,
+                              getTitles: (value) {
+                                switch (value.toInt()) {
+                                  case 1:
+                                    return 'Beasiswa';
+                                  case 2:
+                                    return 'Prestasi';
+                                  case 3:
+                                    return 'MBKM';
+                                  case 4:
+                                    return 'Pertukaran Mahasiswa';
+                                }
+                                return "";
+                              },
+                            ),
+                            leftTitles: SideTitles(
+                              interval: 20,
+                              showTitles: true,
+                              getTitles: (value) {
+                                if (value.toInt() == 0)
+                                  return "";
+                                else
+                                  return value.toInt().toString();
+                              },
+                            ),
+                          ),
+                          maxY: 100,
+                          borderData: FlBorderData(
+                            show: false,
+                          ),
+                          barGroups: barChartGroupData,
+                        )))
                   ],
                 ),
               ),
             ),
-            
           ],
         ),
       ),
