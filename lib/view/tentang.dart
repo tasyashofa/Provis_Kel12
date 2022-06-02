@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'tentang_sejarah_visi.dart';
 import 'tentangstaff.dart';
 import 'tentangmanajemen.dart';
+import 'tentangfasilitas.dart';
 
 class TentangPage extends StatefulWidget {
   const TentangPage({Key? key}) : super(key: key);
@@ -52,7 +53,12 @@ class _TentangPageState extends State<TentangPage> {
                 },
                 child: const Text('MANAJEMEN')),
             const SizedBox(height: 12),
-            ElevatedButton(onPressed: () {}, child: const Text('FASILITAS')),
+            ElevatedButton(onPressed: () {
+              Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TentangFasilitasPage()));
+            }, child: const Text('FASILITAS')),
           ],
         ),
       ),
