@@ -20,10 +20,6 @@ class _StatistikMahasiswaPageState extends State<StatistikMahasiswaPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset('assets/logo_upi.png',
-              width: 120,
-              height: 120,
-            ),
             Text("Statistik Mahasiswa", textAlign: TextAlign.center,),
             SizedBox(height: 12,),
             Card(
@@ -31,7 +27,6 @@ class _StatistikMahasiswaPageState extends State<StatistikMahasiswaPage> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             const ListTile(
-              leading: Icon(Icons.man),
               title: Center(child: Text('Jenis Kelamin')),
               subtitle: Center(child: Text('Jumlah mahasiswa berdasarkan jenis kelamin.')),
             ),
