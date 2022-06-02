@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'statistik_alumni.dart';
 import 'statistik_tendik.dart';
+import 'statistik_mahasiswa.dart';
+import 'statistik_dosen.dart';
+import 'statistik_prodi.dart';
+import 'statistik_universitas.dart';
 
 class StatistikPage extends StatefulWidget {
   const StatistikPage({ Key? key }) : super(key: key);
@@ -23,12 +27,16 @@ class _StatistikPageState extends State<StatistikPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikMahasiswaPage()));
+              }, 
               child: const Text('MAHASISWA')
             ),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikDosenPage()));
+              }, 
               child: const Text('DOSEN')
             ),
             const SizedBox(height: 12),
@@ -47,12 +55,16 @@ class _StatistikPageState extends State<StatistikPage> {
             ),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikProdiPage()));
+              }, 
               child: const Text('PRODI')
             ),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikUniversitasPage()));
+              }, 
               child: const Text('UNIVERSITAS')
             ),
           ],

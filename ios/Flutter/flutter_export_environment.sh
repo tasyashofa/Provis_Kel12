@@ -1,7 +1,12 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
+<<<<<<< Updated upstream
 export "FLUTTER_ROOT=C:\src\flutter"
 export "FLUTTER_APPLICATION_PATH=C:\Users\Tasya\Documents\Kuliah\SEMESTER 6\Pemrograman Visual & Piranti Bergerak\Provis_Kel12"
+=======
+export "FLUTTER_ROOT=C:\tools\flutter"
+export "FLUTTER_APPLICATION_PATH=E:\ProjectKuliah\Provis_Kel12"
+>>>>>>> Stashed changes
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
