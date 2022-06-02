@@ -7,7 +7,7 @@ import 'statistik_prodi.dart';
 import 'statistik_universitas.dart';
 
 class StatistikPage extends StatefulWidget {
-  const StatistikPage({ Key? key }) : super(key: key);
+  const StatistikPage({Key? key}) : super(key: key);
 
   @override
   State<StatistikPage> createState() => _StatistikPageState();
@@ -27,46 +27,58 @@ class _StatistikPageState extends State<StatistikPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikMahasiswaPage()));
-              }, 
-              child: const Text('MAHASISWA')
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StatistikMahasiswaPage()));
+                },
+                child: const Text('MAHASISWA')),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikDosenPage()));
-              }, 
-              child: const Text('DOSEN')
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StatistikDosenPage()));
+                },
+                child: const Text('DOSEN')),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikTendikPage()));
-              }, 
-              child: const Text('TENAGA KEPENDIDIKAN')
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StatistikTendikPage()));
+                },
+                child: const Text('TENAGA KEPENDIDIKAN')),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikAlumniPage()));
-              }, 
-              child: const Text('ALUMNI')
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StatistikAlumniPage()));
+                },
+                child: const Text('ALUMNI')),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikProdiPage()));
-              }, 
-              child: const Text('PRODI')
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StatistikProdiPage()));
+                },
+                child: const Text('PRODI')),
             const SizedBox(height: 12),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StatistikUniversitasPage()));
-              }, 
-              child: const Text('UNIVERSITAS')
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StatistikUniversitasPage()));
+                },
+                child: const Text('UNIVERSITAS')),
           ],
         ),
       ),
