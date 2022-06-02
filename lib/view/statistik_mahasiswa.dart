@@ -27,9 +27,46 @@ class _StatistikMahasiswaPageState extends State<StatistikMahasiswaPage> {
             Text("Statistik Mahasiswa", textAlign: TextAlign.center,),
             SizedBox(height: 12,),
             Card(
-              child: SizedBox(
-                height: 100,
-              )
+              child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.man),
+              title: Center(child: Text('Jenis Kelamin')),
+              subtitle: Center(child: Text('Jumlah mahasiswa berdasarkan jenis kelamin.')),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: ListTile(
+                        leading: Icon(Icons.man),
+                        title: Text('Lelaki'),
+                        subtitle: Text('7777'),
+                      ),
+                    ),
+                  ),
+                ),
+                
+                Expanded(
+                  child: Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: ListTile(
+                        leading: Icon(Icons.woman),
+                        title: Text('Wanita'),
+                        subtitle: Text('7676'),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
             ),
             SizedBox(height: 12,),
             Card(
