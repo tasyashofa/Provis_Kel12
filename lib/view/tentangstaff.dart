@@ -21,32 +21,23 @@ class _TentangStaffState extends State<TentangStaffPage> {
                 shrinkWrap: true,
                 children: [
               InkWell(
-                child: Container(
-                    decoration: BoxDecoration(border: Border.all()),
-                    padding: EdgeInsets.all(14),
-                    //child: Text("baris 1"),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Column(children: [
-                          Image.network(
-                            'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
-                            width: 50,
-                            height: 50,
-                          ),
-                        ]),
-                        Column(children: const [
-                          Text(
-                            "Ahmad Fathi Ibrahimov",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "NIP 1844190048",
-                            //textAlign: TextAlign.center,
-                          ),
-                        ]),
-                      ],
-                    )),
+                child: ListTile(
+                  leading: Image.network(
+                    'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                    title: const Text('Fathi'),
+                    subtitle: const Text("NIP 1844190048"),
+                    tileColor: Colors.white70),
+                  
+              ),
+              Padding(padding: EdgeInsets.only(bottom: 10)),
+              InkWell(
+                child: ListTile(
+                  leading: Image.network(
+                    'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                    title: const Text('Ibrahimov'),
+                    subtitle: const Text("NIP 1844194048"),
+                    tileColor: Colors.white70),
+                  
               ),
             ])));
   }

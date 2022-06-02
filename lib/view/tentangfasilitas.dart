@@ -17,7 +17,7 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
         ),
         body: Center(
             child: ListView(
-                padding: EdgeInsets.all(20),
+                // padding: EdgeInsets.all(20),
                 shrinkWrap: true,
                 children: [
               InkWell(
