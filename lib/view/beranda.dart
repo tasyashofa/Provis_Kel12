@@ -23,6 +23,12 @@ List<BarChartGroupData> barChartGroupData = [
   ]),
 ];
 
+final List<String> carouselImgs = [
+  'assets/gedung_isola.jpeg',
+  'assets/gedung_fpmipa.jpeg',
+  'assets/gerbang_upi.jpeg',
+];
+
 class _BerandaPageState extends State<BerandaPage> {
   @override
   Widget build(BuildContext context) {
@@ -44,9 +50,16 @@ class _BerandaPageState extends State<BerandaPage> {
                         itemBuilder: (context, index) => Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 12),
                           child: Container(
+                            clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(
                                 color: Colors.primaries[index],
-                                borderRadius: BorderRadius.circular(32)),
+                                borderRadius: BorderRadius.circular(16),
+                                image: DecorationImage(
+                                    image: AssetImage(carouselImgs[index]),
+                                    fit: BoxFit.cover,
+                                    
+                                )
+                              ),
                           ),
                         ),
                       ),
@@ -64,57 +77,55 @@ class _BerandaPageState extends State<BerandaPage> {
               height: 12,
             ),
             Card(
-              child: Expanded(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Center(
-                          child: Text(
-                              'Jumlah Warga Universitas Pendidikan Indonesia')),
-                    ),
-                    Container(
-                        padding: EdgeInsets.all(30),
-                        width: MediaQuery.of(context).size.width,
-                        height: 250,
-                        child: BarChart(BarChartData(
-                          titlesData: FlTitlesData(
-                            topTitles: SideTitles(showTitles: false),
-                            rightTitles: SideTitles(showTitles: false),
-                            bottomTitles: SideTitles(
-                              showTitles: true,
-                              getTitles: (value) {
-                                switch (value.toInt()) {
-                                  case 1:
-                                    return 'Dosen';
-                                  case 2:
-                                    return 'Mahasiswa';
-                                  case 3:
-                                    return 'Alumni';
-                                  case 4:
-                                    return 'Tendik';
-                                }
+              child: Column(
+                children: [
+                  ListTile(
+                    title: Center(
+                        child: Text(
+                            'Jumlah Warga Universitas Pendidikan Indonesia')),
+                  ),
+                  Container(
+                      padding: EdgeInsets.all(30),
+                      width: MediaQuery.of(context).size.width,
+                      height: 250,
+                      child: BarChart(BarChartData(
+                        titlesData: FlTitlesData(
+                          topTitles: SideTitles(showTitles: false),
+                          rightTitles: SideTitles(showTitles: false),
+                          bottomTitles: SideTitles(
+                            showTitles: true,
+                            getTitles: (value) {
+                              switch (value.toInt()) {
+                                case 1:
+                                  return 'Dosen';
+                                case 2:
+                                  return 'Mahasiswa';
+                                case 3:
+                                  return 'Alumni';
+                                case 4:
+                                  return 'Tendik';
+                              }
+                              return "";
+                            },
+                          ),
+                          leftTitles: SideTitles(
+                            interval: 1000,
+                            showTitles: true,
+                            getTitles: (value) {
+                              if (value.toInt() == 0)
                                 return "";
-                              },
-                            ),
-                            leftTitles: SideTitles(
-                              interval: 1000,
-                              showTitles: true,
-                              getTitles: (value) {
-                                if (value.toInt() == 0)
-                                  return "";
-                                else
-                                  return value.toInt().toString();
-                              },
-                            ),
+                              else
+                                return value.toInt().toString();
+                            },
                           ),
-                          maxY: 10000,
-                          borderData: FlBorderData(
-                            show: false,
-                          ),
-                          barGroups: barChartGroupData,
-                        )))
-                  ],
-                ),
+                        ),
+                        maxY: 10000,
+                        borderData: FlBorderData(
+                          show: false,
+                        ),
+                        barGroups: barChartGroupData,
+                      )))
+                ],
               ),
             ),
             SizedBox(

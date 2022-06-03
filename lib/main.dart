@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'view/login.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: const ColorScheme.light(
           primary: Color(0xFF810000),
-          secondary: Color(0xFFCE1212),
+          secondary: Colors.red,
         ),
         scaffoldBackgroundColor: const Color(0xFFEEEBDD),
       ),

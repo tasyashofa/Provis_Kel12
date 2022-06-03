@@ -11,9 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool onClickLogin = false;
-  bool onClickSSO = false;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,17 +23,15 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(
               'assets/logo_upi.png',
               width: 120,
               height: 120,
             ),
-            if (onClickLogin)
-              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-                TextField(
+            Spacer(),
+            TextField(
                   decoration: InputDecoration(hintText: 'Username'),
                 ),
                 const SizedBox(height: 12),
@@ -52,32 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                               builder: (context) => TabTransitionPage()));
                     },
                     child: const Text('Login')),
-              ]),
-            if (onClickSSO)
-              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-                TextField(
-                  decoration: InputDecoration(hintText: 'NIM'),
-                ),
-                const SizedBox(height: 12),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(hintText: 'Password'),
-                ),
-                const SizedBox(height: 12),
-                ElevatedButton(onPressed: () {}, child: const Text('Submit')),
-              ]),
-            if (!onClickLogin || !onClickSSO)
-              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-                ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        onClickLogin = true;
-                        onClickSSO = false;
-                      });
-                    },
-                    child: const Text('Login')),
-                const SizedBox(height: 12),
-              ])
+            Spacer(),
           ],
         ),
       ),
