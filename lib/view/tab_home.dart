@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'beranda.dart';
 import 'statistik.dart';
-import 'tentangawal.dart';
+import 'tentang.dart';
 import 'kontak.dart';
 
 class TabTransitionPage extends StatefulWidget {
@@ -18,7 +18,7 @@ class _TabTransitionPageState extends State<TabTransitionPage> {
   List<Widget> pages = [
     const BerandaPage(),
     const StatistikPage(),
-    const TentangAwalPage(),
+    const TentangPage(),
     const KontakPage(),
   ];
 

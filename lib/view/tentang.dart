@@ -33,8 +33,6 @@ class _TentangPageState extends State<TentangPage> {
                 },
                 child: const Text('SEJARAH & VISI MISI')),
             const SizedBox(height: 12),
-            ElevatedButton(onPressed: () {}, child: const Text('PENGHARGAAN')),
-            const SizedBox(height: 12),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -53,12 +51,14 @@ class _TentangPageState extends State<TentangPage> {
                 },
                 child: const Text('MANAJEMEN')),
             const SizedBox(height: 12),
-            ElevatedButton(onPressed: () {
-              Navigator.push(
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => TentangFasilitasPage()));
-            }, child: const Text('FASILITAS')),
+                },
+                child: const Text('FASILITAS')),
           ],
         ),
       ),

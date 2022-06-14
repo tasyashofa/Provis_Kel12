@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'statistik_penelitian.dart';
 
 class StatistikDosenPage extends StatefulWidget {
   const StatistikDosenPage({Key? key}) : super(key: key);
@@ -44,7 +45,40 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            
+            Container(
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('   Pengabdian   '),
+                      style: ElevatedButton.styleFrom(
+                          textStyle: const TextStyle(fontSize: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          )),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PenelitianPage()));
+                      },
+                      child: const Text('   Penelitian  '),
+                      style: ElevatedButton.styleFrom(
+                          textStyle: const TextStyle(fontSize: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          )),
+                    ),
+                  ),
+                ])),
             Card(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -52,8 +86,7 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                   const ListTile(
                     title: Center(child: Text('Jenis Kelamin')),
                     subtitle: Center(
-                        child: Text(
-                            'Jumlah dosen berdasarkan jenis kelamin.')),
+                        child: Text('Jumlah dosen berdasarkan jenis kelamin.')),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -97,56 +130,56 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                 child: Column(
                   children: [
                     ListTile(
-                      title: Center(child: Text('Jumlah Dosen Berdasarkan Fakultas')),
-                     
+                      title: Center(
+                          child: Text('Jumlah Dosen Berdasarkan Fakultas')),
                     ),
                     Container(
-                    padding: EdgeInsets.all(30),
-                    width: MediaQuery.of(context).size.width,
-                    height: 250,
-                    child: BarChart(BarChartData(
-                      titlesData: FlTitlesData(
-                        topTitles: SideTitles(showTitles: false),
-                        rightTitles: SideTitles(showTitles: false),
-                        bottomTitles: SideTitles(
-                          showTitles: true,
-                          getTitles: (value) {
-                            switch (value.toInt()) {
-                              case 1:
-                                return 'FPMIPA';
-                              case 2:
-                                return 'FIP';
-                              case 3:
-                                return 'FPIPS';
-                              case 4:
-                                return 'FPSD';
-                              case 5:
-                                return 'FPEB';
-                              case 6:
-                                return 'FPBS';
-                              case 7:
-                                return 'FPOK';
-                            }
-                            return "";
-                          },
-                        ),
-                        leftTitles: SideTitles(
-                          interval: 20,
-                          showTitles: true,
-                          getTitles: (value) {
-                            if (value.toInt() == 0)
-                              return "";
-                            else
-                              return value.toInt().toString();
-                          },
-                        ),
-                      ),
-                      maxY: 100,
-                      borderData: FlBorderData(
-                        show: false,
-                      ),
-                      barGroups: barChartGroupData,
-                    )))
+                        padding: EdgeInsets.all(30),
+                        width: MediaQuery.of(context).size.width,
+                        height: 250,
+                        child: BarChart(BarChartData(
+                          titlesData: FlTitlesData(
+                            topTitles: SideTitles(showTitles: false),
+                            rightTitles: SideTitles(showTitles: false),
+                            bottomTitles: SideTitles(
+                              showTitles: true,
+                              getTitles: (value) {
+                                switch (value.toInt()) {
+                                  case 1:
+                                    return 'FPMIPA';
+                                  case 2:
+                                    return 'FIP';
+                                  case 3:
+                                    return 'FPIPS';
+                                  case 4:
+                                    return 'FPSD';
+                                  case 5:
+                                    return 'FPEB';
+                                  case 6:
+                                    return 'FPBS';
+                                  case 7:
+                                    return 'FPOK';
+                                }
+                                return "";
+                              },
+                            ),
+                            leftTitles: SideTitles(
+                              interval: 20,
+                              showTitles: true,
+                              getTitles: (value) {
+                                if (value.toInt() == 0)
+                                  return "";
+                                else
+                                  return value.toInt().toString();
+                              },
+                            ),
+                          ),
+                          maxY: 100,
+                          borderData: FlBorderData(
+                            show: false,
+                          ),
+                          barGroups: barChartGroupData,
+                        )))
                   ],
                 ),
               ),

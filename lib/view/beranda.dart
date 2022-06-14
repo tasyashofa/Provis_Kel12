@@ -35,7 +35,6 @@ class _BerandaPageState extends State<BerandaPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Beranda'),
-        foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -55,11 +54,9 @@ class _BerandaPageState extends State<BerandaPage> {
                                 color: Colors.primaries[index],
                                 borderRadius: BorderRadius.circular(16),
                                 image: DecorationImage(
-                                    image: AssetImage(carouselImgs[index]),
-                                    fit: BoxFit.cover,
-                                    
-                                )
-                              ),
+                                  image: AssetImage(carouselImgs[index]),
+                                  fit: BoxFit.cover,
+                                )),
                           ),
                         ),
                       ),
@@ -109,7 +106,7 @@ class _BerandaPageState extends State<BerandaPage> {
                             },
                           ),
                           leftTitles: SideTitles(
-                            interval: 1000,
+                            interval: 10,
                             showTitles: true,
                             getTitles: (value) {
                               if (value.toInt() == 0)
@@ -119,7 +116,7 @@ class _BerandaPageState extends State<BerandaPage> {
                             },
                           ),
                         ),
-                        maxY: 10000,
+                        maxY: 100,
                         borderData: FlBorderData(
                           show: false,
                         ),
