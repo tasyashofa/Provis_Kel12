@@ -27,120 +27,104 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Statistik Prodi'),
-        foregroundColor: Colors.white,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(
-              height: 12,
-            ),
-            Card(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const ListTile(
-                    title: Center(child: Text('Jenis Kelamin')),
-                    subtitle: Center(
-                        child:
-                            Text('Jumlah alumni berdasarkan jenis kelamin.')),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: Card(
-                          color: Color.fromARGB(255, 216, 237, 255),
-                          child: Padding(
-                            padding: EdgeInsets.all(5),
-                            child: ListTile(
-                              leading: Icon(Icons.man),
-                              title: Text('Lelaki'),
-                              subtitle: Text('7777'),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Card(
-                          color: Color.fromARGB(255, 241, 214, 223),
-                          child: Padding(
-                            padding: EdgeInsets.all(5),
-                            child: ListTile(
-                              leading: Icon(Icons.woman),
-                              title: Text('Wanita'),
-                              subtitle: Text('7676'),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Card(
-              child: Expanded(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Center(child: Text('Jumlah Mahasiswa')),
-                    ),
-                    Container(
-                        padding: EdgeInsets.all(30),
-                        width: MediaQuery.of(context).size.width,
-                        height: 250,
-                        child: BarChart(BarChartData(
-                          titlesData: FlTitlesData(
-                            topTitles: SideTitles(showTitles: false),
-                            rightTitles: SideTitles(showTitles: false),
-                            bottomTitles: SideTitles(
-                              showTitles: true,
-                              getTitles: (value) {
-                                switch (value.toInt()) {
-                                  case 1:
-                                    return 'Beasiswa';
-                                  case 2:
-                                    return 'Prestasi';
-                                  case 3:
-                                    return 'MBKM';
-                                  case 4:
-                                    return 'Pertukaran Mahasiswa';
-                                }
-                                return "";
-                              },
-                            ),
-                            leftTitles: SideTitles(
-                              interval: 20,
-                              showTitles: true,
-                              getTitles: (value) {
-                                if (value.toInt() == 0)
-                                  return "";
-                                else
-                                  return value.toInt().toString();
-                              },
-                            ),
-                          ),
-                          maxY: 100,
-                          borderData: FlBorderData(
-                            show: false,
-                          ),
-                          barGroups: barChartGroupData,
-                        )))
-                  ],
-                ),
-              ),
-            ),
-          ],
+        appBar: AppBar(
+          title: const Text('Statistik Prodi'),
+          foregroundColor: Colors.white,
         ),
-      ),
-    );
+        body: SingleChildScrollView(
+            child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Container(
+                          padding: const EdgeInsets.all(14),
+                          child: Column(
+                            children: [
+                              Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Card(
+                                        child: Padding(
+                                            padding: EdgeInsets.all(12),
+                                            child: Column(
+                                              children: [
+                                                Image.network(
+                                                  'assets/logo_upi.png',
+                                                  width: 100,
+                                                ),
+                                                Text('Matematika'),
+                                              ],
+                                            ))),
+                                    Card(
+                                        child: Padding(
+                                            padding: EdgeInsets.all(12),
+                                            child: Column(
+                                              children: [
+                                                Image.network(
+                                                  'assets/logo_upi.png',
+                                                  width: 100,
+                                                ),
+                                                Text('Fisika'),
+                                              ],
+                                            ))),
+                                    Card(
+                                        child: Padding(
+                                            padding: EdgeInsets.all(12),
+                                            child: Column(
+                                              children: [
+                                                Image.network(
+                                                  'assets/logo_upi.png',
+                                                  width: 100,
+                                                ),
+                                                Text('IPSE'),
+                                              ],
+                                            ))),
+                                  ]),
+                              Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Card(
+                                        child: Padding(
+                                            padding: EdgeInsets.all(12),
+                                            child: Column(
+                                              children: [
+                                                Image.network(
+                                                  'assets/logo_upi.png',
+                                                  width: 100,
+                                                ),
+                                                Text('Kimia'),
+                                              ],
+                                            ))),
+                                    Card(
+                                        child: Padding(
+                                            padding: EdgeInsets.all(12),
+                                            child: Column(
+                                              children: [
+                                                Image.network(
+                                                  'assets/logo_upi.png',
+                                                  width: 100,
+                                                ),
+                                                Text('Biologi'),
+                                              ],
+                                            ))),
+                                    Card(
+                                        child: Padding(
+                                            padding: EdgeInsets.all(12),
+                                            child: Column(
+                                              children: [
+                                                Image.network(
+                                                  'assets/logo_upi.png',
+                                                  width: 100,
+                                                ),
+                                                Text('Ilkom'),
+                                              ],
+                                            ))),
+                                  ]),
+                            ],
+                          )),
+                    ]))));
   }
 }
