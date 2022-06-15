@@ -39,12 +39,14 @@ class _StatistikMahasiswaPageState extends State<StatistikMahasiswaPage> {
     "MBKM": 1000,
     "Reguler": 7000,
     "Cuti": 100,
+    "Pertukaran Mahasiswa": 200,
   };
 
   List<Color> colorList = [
     const Color(0xff3EE094),
     const Color(0xff3398F6),
     const Color(0xffFE9539),
+    const Color(0xffFA4A42),
   ];
 
   @override
