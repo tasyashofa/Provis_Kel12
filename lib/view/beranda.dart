@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:pie_chart/pie_chart.dart' as PieChart;
 
 class BerandaPage extends StatefulWidget {
   const BerandaPage({Key? key}) : super(key: key);
@@ -30,6 +31,19 @@ final List<String> carouselImgs = [
 ];
 
 class _BerandaPageState extends State<BerandaPage> {
+  Map<String, double> dataMap = {
+    "Mahasiswa": 8000,
+    "Dosen": 500,
+    "Tendik": 200,
+    "Alumni": 10000,
+  };
+
+  List<Color> colorList = [
+    const Color(0xff3EE094),
+    const Color(0xff3398F6),
+    const Color(0xffFA4A42),
+    const Color(0xffFE9539)
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +77,40 @@ class _BerandaPageState extends State<BerandaPage> {
                     )),
             SizedBox(height: 12),
             Card(
+              child: Expanded(
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Center(child: Text('Rasio Warga UPI')),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(30),
+                      width: MediaQuery.of(context).size.width,
+                      height: 250,
+                      child: PieChart.PieChart(
+                        dataMap: dataMap,
+                        colorList: colorList,
+                        chartRadius: MediaQuery.of(context).size.width / 2,
+                        ringStrokeWidth: 32,
+                        animationDuration: const Duration(seconds: 3),
+                        chartValuesOptions: const PieChart.ChartValuesOptions(
+                            showChartValues: true,
+                            showChartValuesOutside: true,
+                            showChartValuesInPercentage: true,
+                            showChartValueBackground: false),
+                        legendOptions: const PieChart.LegendOptions(
+                            showLegends: true,
+                            legendShape: BoxShape.rectangle,
+                            legendTextStyle: TextStyle(fontSize: 15),
+                            legendPosition: PieChart.LegendPosition.right,
+                            showLegendsInRow: false),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Card(
                 child: Padding(
                     padding: EdgeInsets.all(12),
                     child: Column(
@@ -70,82 +118,72 @@ class _BerandaPageState extends State<BerandaPage> {
                         Text('Berita'),
                       ],
                     ))),
-            SizedBox(
-              height: 12,
-            ),
-            Card(
-              child: Column(
-                children: [
-                  ListTile(
-                    title: Center(
-                        child: Text(
-                            'Jumlah Warga Universitas Pendidikan Indonesia')),
-                  ),
-                  Container(
-                      padding: EdgeInsets.all(30),
-                      width: MediaQuery.of(context).size.width,
-                      height: 250,
-                      child: BarChart(BarChartData(
-                        titlesData: FlTitlesData(
-                          topTitles: SideTitles(showTitles: false),
-                          rightTitles: SideTitles(showTitles: false),
-                          bottomTitles: SideTitles(
-                            showTitles: true,
-                            getTitles: (value) {
-                              switch (value.toInt()) {
-                                case 1:
-                                  return 'Dosen';
-                                case 2:
-                                  return 'Mahasiswa';
-                                case 3:
-                                  return 'Alumni';
-                                case 4:
-                                  return 'Tendik';
-                              }
-                              return "";
-                            },
-                          ),
-                          leftTitles: SideTitles(
-                            interval: 10,
-                            showTitles: true,
-                            getTitles: (value) {
-                              if (value.toInt() == 0)
-                                return "";
-                              else
-                                return value.toInt().toString();
-                            },
-                          ),
-                        ),
-                        maxY: 100,
-                        borderData: FlBorderData(
-                          show: false,
-                        ),
-                        barGroups: barChartGroupData,
-                      )))
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Card(
-                child: SizedBox(
-              height: 100,
-            )),
-            SizedBox(
-              height: 12,
-            ),
-            Card(
-                child: SizedBox(
-              height: 100,
-            )),
-            SizedBox(
-              height: 12,
-            ),
-            Card(
-                child: SizedBox(
-              height: 100,
-            )),
+            Container(
+                padding: const EdgeInsets.all(14),
+                child: Column(
+                  children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Card(
+                              child: Padding(
+                                  padding: EdgeInsets.all(12),
+                                  child: Column(
+                                    children: [
+                                      Image.network(
+                                        'assets/gedung_isola.jpeg',
+                                        width: 180,
+                                      ),
+                                      Text(
+                                          'Start to Learn and Master \nSoft Skills as a Student'),
+                                    ],
+                                  ))),
+                          Card(
+                              child: Padding(
+                                  padding: EdgeInsets.all(12),
+                                  child: Column(
+                                    children: [
+                                      Image.network(
+                                        'assets/gedung_isola.jpeg',
+                                        width: 180,
+                                      ),
+                                      Text(
+                                          'Is Blended Learning Effective\nat UPI?'),
+                                    ],
+                                  ))),
+                        ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Card(
+                              child: Padding(
+                                  padding: EdgeInsets.all(12),
+                                  child: Column(
+                                    children: [
+                                      Image.network(
+                                        'assets/gedung_isola.jpeg',
+                                        width: 180,
+                                      ),
+                                      Text(
+                                          'Chemistry Education Online \nEvents at UPI in 2021'),
+                                    ],
+                                  ))),
+                          Card(
+                              child: Padding(
+                                  padding: EdgeInsets.all(12),
+                                  child: Column(
+                                    children: [
+                                      Image.network(
+                                        'assets/gedung_isola.jpeg',
+                                        width: 180,
+                                      ),
+                                      Text(
+                                          'Students’ Thoughts on \nExtracurricular Activities'),
+                                    ],
+                                  ))),
+                        ]),
+                  ],
+                )),
           ],
         ),
       ),
