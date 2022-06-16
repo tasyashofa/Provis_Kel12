@@ -69,6 +69,15 @@ class _StatistikPageState extends State<StatistikPage> {
                       MaterialPageRoute(
                           builder: (context) => StatistikProdiPage()));
                 },
+                child: const Text('FAKULTAS')),
+            const SizedBox(height: 12),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StatistikProdiPage()));
+                },
                 child: const Text('PRODI')),
             const SizedBox(height: 12),
             ElevatedButton(
