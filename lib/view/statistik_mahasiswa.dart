@@ -12,25 +12,25 @@ class StatistikMahasiswaPage extends StatefulWidget {
 
 List<BarChartGroupData> barChartGroupData = [
   BarChartGroupData(x: 1, barRods: [
-    BarChartRodData(y: 20, colors: [Colors.black]),
+    BarChartRodData(y: 4500, colors: [Colors.black]),
   ]),
   BarChartGroupData(x: 2, barRods: [
-    BarChartRodData(y: 30, colors: [Colors.red]),
+    BarChartRodData(y: 4000, colors: [Colors.red]),
   ]),
   BarChartGroupData(x: 3, barRods: [
-    BarChartRodData(y: 25, colors: [Colors.green]),
+    BarChartRodData(y: 3200, colors: [Colors.green]),
   ]),
   BarChartGroupData(x: 4, barRods: [
-    BarChartRodData(y: 40, colors: [Colors.blue]),
+    BarChartRodData(y: 4999, colors: [Colors.blue]),
   ]),
   BarChartGroupData(x: 5, barRods: [
-    BarChartRodData(y: 50, colors: [Colors.yellow]),
+    BarChartRodData(y: 4600, colors: [Colors.yellow]),
   ]),
   BarChartGroupData(x: 6, barRods: [
-    BarChartRodData(y: 23, colors: [Colors.orange]),
+    BarChartRodData(y: 3500, colors: [Colors.orange]),
   ]),
   BarChartGroupData(x: 7, barRods: [
-    BarChartRodData(y: 60, colors: [Colors.pink]),
+    BarChartRodData(y: 5000, colors: [Colors.pink]),
   ]),
 ];
 
@@ -107,8 +107,8 @@ class _StatistikMahasiswaPageState extends State<StatistikMahasiswaPage> {
                     children: [
                       const ListTile(
                         title: Center(
-                            child: Text(
-                                'Jumlah mahasiswa Berdasarkan Fakultas')),
+                            child:
+                                Text('Jumlah mahasiswa Berdasarkan Fakultas')),
                       ),
                       Container(
                           padding: const EdgeInsets.all(30),
@@ -141,7 +141,8 @@ class _StatistikMahasiswaPageState extends State<StatistikMahasiswaPage> {
                                 },
                               ),
                               leftTitles: SideTitles(
-                                interval: 20,
+                                reservedSize: 40,
+                                interval: 1000,
                                 showTitles: true,
                                 getTitles: (value) {
                                   if (value.toInt() == 0)
@@ -151,7 +152,7 @@ class _StatistikMahasiswaPageState extends State<StatistikMahasiswaPage> {
                                 },
                               ),
                             ),
-                            maxY: 100,
+                            maxY: 5000,
                             borderData: FlBorderData(
                               show: false,
                             ),
@@ -177,12 +178,11 @@ class _StatistikMahasiswaPageState extends State<StatistikMahasiswaPage> {
                           chartRadius: MediaQuery.of(context).size.width / 2,
                           ringStrokeWidth: 32,
                           animationDuration: const Duration(seconds: 3),
-                          chartValuesOptions:
-                              const PieChart.ChartValuesOptions(
-                                  showChartValues: true,
-                                  showChartValuesOutside: true,
-                                  showChartValuesInPercentage: true,
-                                  showChartValueBackground: false),
+                          chartValuesOptions: const PieChart.ChartValuesOptions(
+                              showChartValues: true,
+                              showChartValuesOutside: true,
+                              showChartValuesInPercentage: true,
+                              showChartValueBackground: false),
                           legendOptions: const PieChart.LegendOptions(
                               showLegends: true,
                               legendShape: BoxShape.rectangle,

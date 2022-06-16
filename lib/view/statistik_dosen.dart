@@ -13,26 +13,26 @@ class StatistikDosenPage extends StatefulWidget {
 
 List<BarChartGroupData> barChartGroupData = [
   BarChartGroupData(x: 1, barRods: [
-    BarChartRodData(y: 20, colors: [Colors.black]),
+    BarChartRodData(y: 600, colors: [Colors.black]),
   ]),
   BarChartGroupData(x: 2, barRods: [
-    BarChartRodData(y: 30, colors: [Colors.red]),
+    BarChartRodData(y: 480, colors: [Colors.red]),
   ]),
   BarChartGroupData(x: 3, barRods: [
-    BarChartRodData(y: 25, colors: [Colors.green]),
+    BarChartRodData(y: 2340, colors: [Colors.green]),
   ]),
   BarChartGroupData(x: 4, barRods: [
-    BarChartRodData(y: 40, colors: [Colors.blue]),
+    BarChartRodData(y: 2280, colors: [Colors.blue]),
   ]),
   BarChartGroupData(x: 5, barRods: [
-    BarChartRodData(y: 50, colors: [Colors.yellow]),
+    BarChartRodData(y: 240, colors: [Colors.yellow]),
   ]),
 ];
 
 class _StatistikDosenPageState extends State<StatistikDosenPage> {
   Map<String, double> dataMap = {
-    "S1": 40,
-    "S2": 25,
+    "S1": 4000,
+    "S2": 2000,
   };
 
   List<Color> colorList = [
@@ -112,7 +112,7 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                                 child: ListTile(
                                   leading: Icon(Icons.man),
                                   title: Text('Lelaki'),
-                                  subtitle: Text('7777'),
+                                  subtitle: Text('12000'),
                                 ),
                               ),
                             ),
@@ -125,7 +125,7 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                                 child: ListTile(
                                   leading: Icon(Icons.woman),
                                   title: Text('Wanita'),
-                                  subtitle: Text('7676'),
+                                  subtitle: Text('20000'),
                                 ),
                               ),
                             ),
@@ -173,7 +173,8 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                                 },
                               ),
                               leftTitles: SideTitles(
-                                interval: 20,
+                                reservedSize: 40,
+                                interval: 1000,
                                 showTitles: true,
                                 getTitles: (value) {
                                   if (value.toInt() == 0)
@@ -183,7 +184,7 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                                 },
                               ),
                             ),
-                            maxY: 100,
+                            maxY: 5000,
                             borderData: FlBorderData(
                               show: false,
                             ),
