@@ -36,7 +36,7 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                        Image.asset("assets/kolam_upi.jpg",
+                        Image.asset("kolam_upi.jpg",
                           // width: 50,
                           height: 250
                           ),
@@ -91,7 +91,7 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                        Image.asset("assets/classroom.jpg",
+                        Image.asset("classroom.jpg",
                           // width: 100,
                           height: 250
                           ),
@@ -146,7 +146,7 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                        Image.asset("assets/stadion.jpg",
+                        Image.asset("stadion.jpg",
                           // width: 100,
                           height: 250
                           ),
@@ -193,7 +193,7 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                        Image.asset("assets/tenis_indoor.jpg",
+                        Image.asset("tenis_indoor.jpg",
                           // width: 100,
                           height: 250
                           ),
