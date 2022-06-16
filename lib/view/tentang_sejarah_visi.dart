@@ -46,7 +46,9 @@ class _SejarahVisiPageState extends State<SejarahVisiPage> {
                           height: 12,
                         ),
                         Text(
-                            'Pelapor dan Unggul dalam Pengembangan Kurikulum Program Pendidikan, Layanan Akademik, dan Jasa Keprofesian.'),
+                          'Pelapor dan Unggul dalam Pengembangan Kurikulum Program Pendidikan, Layanan Akademik, dan Jasa Keprofesian.',
+                          textAlign: TextAlign.justify,
+                        ),
                       ],
                     ))),
             SizedBox(
@@ -62,7 +64,9 @@ class _SejarahVisiPageState extends State<SejarahVisiPage> {
                           height: 12,
                         ),
                         Text(
-                            '1. Mengembangkan Kurikulum Program pendidikan akademik, vokasi, profesi, dan spesialis sesuai dengan standar yang ditetapkan. \n2. Mengoordinasikan penyelenggaraan program pendidikan akademik, vokasi, profesi dan spesialis yang transparan dan akuntabel. \n3. Menyelenggarakan seleksi dan layanan akademik program pendidikan akadaemik, vokasi, profesi dan spesialis yang berkualitas. \n4. Mengelola jasa keprofesian yang relevan dengan kebutuhan masyarakat.'),
+                          '1. Mengembangkan Kurikulum Program pendidikan akademik, vokasi, profesi, dan spesialis sesuai dengan standar yang ditetapkan. \n2. Mengoordinasikan penyelenggaraan program pendidikan akademik, vokasi, profesi dan spesialis yang transparan dan akuntabel. \n3. Menyelenggarakan seleksi dan layanan akademik program pendidikan akadaemik, vokasi, profesi dan spesialis yang berkualitas. \n4. Mengelola jasa keprofesian yang relevan dengan kebutuhan masyarakat.',
+                          textAlign: TextAlign.justify,
+                        ),
                       ],
                     ))),
           ],
