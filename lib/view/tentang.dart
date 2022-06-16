@@ -16,7 +16,7 @@ class _TentangPageState extends State<TentangPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tentang'),
+        title: const Text('Info'),
         foregroundColor: Colors.white,
       ),
       body: Padding(

@@ -45,7 +45,7 @@ class _TabTransitionPageState extends State<TabTransitionPage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(currIndex == 2 ? Icons.info : Icons.info_outline),
-              label: 'Tentang',
+              label: 'Info',
               backgroundColor: Colors.black,
             ),
             BottomNavigationBarItem(
