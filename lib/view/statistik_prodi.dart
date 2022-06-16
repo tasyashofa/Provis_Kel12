@@ -11,16 +11,16 @@ class StatistikProdiPage extends StatefulWidget {
 
 List<BarChartGroupData> barChartGroupData = [
   BarChartGroupData(x: 1, barRods: [
-    BarChartRodData(y: 20, colors: [Colors.black]),
+    BarChartRodData(y: 80, colors: [Colors.black]),
   ]),
   BarChartGroupData(x: 2, barRods: [
-    BarChartRodData(y: 30, colors: [Colors.red]),
+    BarChartRodData(y: 20, colors: [Colors.red]),
   ]),
   BarChartGroupData(x: 3, barRods: [
-    BarChartRodData(y: 25, colors: [Colors.green]),
+    BarChartRodData(y: 10, colors: [Colors.green]),
   ]),
   BarChartGroupData(x: 4, barRods: [
-    BarChartRodData(y: 40, colors: [Colors.blue]),
+    BarChartRodData(y: 600, colors: [Colors.blue]),
   ]),
 ];
 
@@ -71,7 +71,8 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                       leftTitles: SideTitles(
-                                        interval: 20,
+                                        reservedSize: 40,
+                                        interval: 200,
                                         showTitles: true,
                                         getTitles: (value) {
                                           if (value.toInt() == 0)
@@ -81,7 +82,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 100,
+                                    maxY: 1000,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),
@@ -133,7 +134,8 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                       leftTitles: SideTitles(
-                                        interval: 20,
+                                        reservedSize: 40,
+                                        interval: 200,
                                         showTitles: true,
                                         getTitles: (value) {
                                           if (value.toInt() == 0)
@@ -143,7 +145,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 100,
+                                    maxY: 1000,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),
@@ -195,7 +197,8 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                       leftTitles: SideTitles(
-                                        interval: 20,
+                                        reservedSize: 40,
+                                        interval: 200,
                                         showTitles: true,
                                         getTitles: (value) {
                                           if (value.toInt() == 0)
@@ -205,7 +208,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 100,
+                                    maxY: 1000,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),
@@ -257,7 +260,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                       leftTitles: SideTitles(
-                                        interval: 20,
+                                        interval: 200,
                                         showTitles: true,
                                         getTitles: (value) {
                                           if (value.toInt() == 0)
@@ -267,7 +270,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 100,
+                                    maxY: 1000,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),
@@ -282,7 +285,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => Prodi(
-                                        namaProdi: 'Matematika',
+                                        namaProdi: 'Kimia',
                                       )));
                         },
                       ),
@@ -319,7 +322,8 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                       leftTitles: SideTitles(
-                                        interval: 20,
+                                        reservedSize: 40,
+                                        interval: 200,
                                         showTitles: true,
                                         getTitles: (value) {
                                           if (value.toInt() == 0)
@@ -329,7 +333,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 100,
+                                    maxY: 1000,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),

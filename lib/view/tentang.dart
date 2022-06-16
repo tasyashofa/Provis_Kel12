@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'tentang_sejarah_visi.dart';
 import 'tentangstaff.dart';
-import 'tentangmanajemen.dart';
+import 'tentangpimpinan.dart';
 import 'tentangfasilitas.dart';
 
 class TentangPage extends StatefulWidget {
@@ -38,18 +38,18 @@ class _TentangPageState extends State<TentangPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => TentangStaffPage()));
+                          builder: (context) => TentangPimpinanPage()));
                 },
-                child: const Text('STAFF')),
+                child: const Text('PIMPINAN')),
             const SizedBox(height: 12),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => TentangManajemenPage()));
+                          builder: (context) => TentangStaffPage()));
                 },
-                child: const Text('MANAJEMEN')),
+                child: const Text('DEKAN FAKULTAS')),
             const SizedBox(height: 12),
             ElevatedButton(
                 onPressed: () {
