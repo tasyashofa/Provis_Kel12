@@ -98,8 +98,8 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                       const ListTile(
                         title: Center(child: Text('Jenis Kelamin')),
                         subtitle: Center(
-                            child: Text(
-                                'Jumlah dosen berdasarkan jabatan funsgional')),
+                            child:
+                                Text('Jumlah dosen berdasarkan jenis kelamin')),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -143,7 +143,8 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                     children: [
                       const ListTile(
                         title: Center(
-                            child: Text('Jumlah Dosen Berdasarkan Fakultas')),
+                            child: Text(
+                                'Jumlah Dosen Berdasarkan jabatan fungsional')),
                       ),
                       Container(
                           padding: EdgeInsets.all(30),
@@ -212,12 +213,11 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                           chartRadius: MediaQuery.of(context).size.width / 2,
                           ringStrokeWidth: 32,
                           animationDuration: const Duration(seconds: 3),
-                          chartValuesOptions:
-                              const PieChart.ChartValuesOptions(
-                                  showChartValues: true,
-                                  showChartValuesOutside: true,
-                                  showChartValuesInPercentage: true,
-                                  showChartValueBackground: false),
+                          chartValuesOptions: const PieChart.ChartValuesOptions(
+                              showChartValues: true,
+                              showChartValuesOutside: true,
+                              showChartValuesInPercentage: true,
+                              showChartValueBackground: false),
                           legendOptions: const PieChart.LegendOptions(
                               showLegends: true,
                               legendShape: BoxShape.rectangle,

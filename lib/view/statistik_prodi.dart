@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'prodi.dart';
 
 class StatistikProdiPage extends StatefulWidget {
   const StatistikProdiPage({Key? key}) : super(key: key);
@@ -35,85 +36,318 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
             child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Card(
-                        child: Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/logo_upi.png',
-                                  width: 100,
-                                ),
-                                const Text('Matematika'),
-                              ],
-                            ))),
-                    Card(
-                        child: Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/logo_upi.png',
-                                  width: 100,
-                                ),
-                                const SizedBox(height: 10),
-                                const Text('Fisika'),
-                              ],
-                            ))),
-                    Card(
-                        child: Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/logo_upi.png',
-                                  width: 100,
-                                ),
-                                const SizedBox(height: 10),
-                                const Text('IPSE'),
-                              ],
-                            ))),
-                      Card(
-                        child: Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/logo_upi.png',
-                                  width: 100,
-                                ),
-                                const SizedBox(height: 10),
-                                const Text('Kimia'),
-                              ],
-                            ))),
-                    Card(
-                        child: Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/logo_upi.png',
-                                  width: 100,
-                                ),
-                                const SizedBox(height: 10),
-                                const Text('Biologi'),
-                              ],
-                            ))),
-                    Card(
-                        child: Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/logo_upi.png',
-                                  width: 100,
-                                ),
-                                const SizedBox(height: 10),
-                                const Text('Ilkom'),
-                              ],
-                            ))),
+                      InkWell(
+                        child: Card(
+                          child: Column(
+                            children: [
+                              const ListTile(
+                                title: Center(child: Text('Matematika')),
+                              ),
+                              Container(
+                                  padding: EdgeInsets.all(30),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 150,
+                                  child: BarChart(BarChartData(
+                                    titlesData: FlTitlesData(
+                                      topTitles: SideTitles(showTitles: false),
+                                      rightTitles:
+                                          SideTitles(showTitles: false),
+                                      bottomTitles: SideTitles(
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          switch (value.toInt()) {
+                                            case 1:
+                                              return 'Mahasiswa';
+                                            case 2:
+                                              return 'Dosen';
+                                            case 3:
+                                              return 'Tendik';
+                                            case 4:
+                                              return 'Alumni';
+                                          }
+                                          return "";
+                                        },
+                                      ),
+                                      leftTitles: SideTitles(
+                                        interval: 20,
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          if (value.toInt() == 0)
+                                            return "";
+                                          else
+                                            return value.toInt().toString();
+                                        },
+                                      ),
+                                    ),
+                                    maxY: 100,
+                                    borderData: FlBorderData(
+                                      show: false,
+                                    ),
+                                    barGroups: barChartGroupData,
+                                  )))
+                            ],
+                          ),
+                        ),
+                        onTap: () {
+                          //gunakan navigator untuk panggil Prodi
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Prodi(
+                                        namaProdi: 'Matematika',
+                                      )));
+                        },
+                      ),
+                      InkWell(
+                        child: Card(
+                          child: Column(
+                            children: [
+                              const ListTile(
+                                title: Center(child: Text('Ilmu Komputer')),
+                              ),
+                              Container(
+                                  padding: EdgeInsets.all(30),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 150,
+                                  child: BarChart(BarChartData(
+                                    titlesData: FlTitlesData(
+                                      topTitles: SideTitles(showTitles: false),
+                                      rightTitles:
+                                          SideTitles(showTitles: false),
+                                      bottomTitles: SideTitles(
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          switch (value.toInt()) {
+                                            case 1:
+                                              return 'Mahasiswa';
+                                            case 2:
+                                              return 'Dosen';
+                                            case 3:
+                                              return 'Tendik';
+                                            case 4:
+                                              return 'Alumni';
+                                          }
+                                          return "";
+                                        },
+                                      ),
+                                      leftTitles: SideTitles(
+                                        interval: 20,
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          if (value.toInt() == 0)
+                                            return "";
+                                          else
+                                            return value.toInt().toString();
+                                        },
+                                      ),
+                                    ),
+                                    maxY: 100,
+                                    borderData: FlBorderData(
+                                      show: false,
+                                    ),
+                                    barGroups: barChartGroupData,
+                                  )))
+                            ],
+                          ),
+                        ),
+                        onTap: () {
+                          //gunakan navigator untuk panggil Prodi
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Prodi(
+                                        namaProdi: 'Ilmu Komputer',
+                                      )));
+                        },
+                      ),
+                      InkWell(
+                        child: Card(
+                          child: Column(
+                            children: [
+                              const ListTile(
+                                title: Center(child: Text('Biologi')),
+                              ),
+                              Container(
+                                  padding: EdgeInsets.all(30),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 150,
+                                  child: BarChart(BarChartData(
+                                    titlesData: FlTitlesData(
+                                      topTitles: SideTitles(showTitles: false),
+                                      rightTitles:
+                                          SideTitles(showTitles: false),
+                                      bottomTitles: SideTitles(
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          switch (value.toInt()) {
+                                            case 1:
+                                              return 'Mahasiswa';
+                                            case 2:
+                                              return 'Dosen';
+                                            case 3:
+                                              return 'Tendik';
+                                            case 4:
+                                              return 'Alumni';
+                                          }
+                                          return "";
+                                        },
+                                      ),
+                                      leftTitles: SideTitles(
+                                        interval: 20,
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          if (value.toInt() == 0)
+                                            return "";
+                                          else
+                                            return value.toInt().toString();
+                                        },
+                                      ),
+                                    ),
+                                    maxY: 100,
+                                    borderData: FlBorderData(
+                                      show: false,
+                                    ),
+                                    barGroups: barChartGroupData,
+                                  )))
+                            ],
+                          ),
+                        ),
+                        onTap: () {
+                          //gunakan navigator untuk panggil Prodi
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Prodi(
+                                        namaProdi: 'Biologi',
+                                      )));
+                        },
+                      ),
+                      InkWell(
+                        child: Card(
+                          child: Column(
+                            children: [
+                              const ListTile(
+                                title: Center(child: Text('Kimia')),
+                              ),
+                              Container(
+                                  padding: EdgeInsets.all(30),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 150,
+                                  child: BarChart(BarChartData(
+                                    titlesData: FlTitlesData(
+                                      topTitles: SideTitles(showTitles: false),
+                                      rightTitles:
+                                          SideTitles(showTitles: false),
+                                      bottomTitles: SideTitles(
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          switch (value.toInt()) {
+                                            case 1:
+                                              return 'Mahasiswa';
+                                            case 2:
+                                              return 'Dosen';
+                                            case 3:
+                                              return 'Tendik';
+                                            case 4:
+                                              return 'Alumni';
+                                          }
+                                          return "";
+                                        },
+                                      ),
+                                      leftTitles: SideTitles(
+                                        interval: 20,
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          if (value.toInt() == 0)
+                                            return "";
+                                          else
+                                            return value.toInt().toString();
+                                        },
+                                      ),
+                                    ),
+                                    maxY: 100,
+                                    borderData: FlBorderData(
+                                      show: false,
+                                    ),
+                                    barGroups: barChartGroupData,
+                                  )))
+                            ],
+                          ),
+                        ),
+                        onTap: () {
+                          //gunakan navigator untuk panggil Prodi
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Prodi(
+                                        namaProdi: 'Matematika',
+                                      )));
+                        },
+                      ),
+                      InkWell(
+                        child: Card(
+                          child: Column(
+                            children: [
+                              const ListTile(
+                                title: Center(child: Text('Fisika')),
+                              ),
+                              Container(
+                                  padding: EdgeInsets.all(30),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 150,
+                                  child: BarChart(BarChartData(
+                                    titlesData: FlTitlesData(
+                                      topTitles: SideTitles(showTitles: false),
+                                      rightTitles:
+                                          SideTitles(showTitles: false),
+                                      bottomTitles: SideTitles(
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          switch (value.toInt()) {
+                                            case 1:
+                                              return 'Mahasiswa';
+                                            case 2:
+                                              return 'Dosen';
+                                            case 3:
+                                              return 'Tendik';
+                                            case 4:
+                                              return 'Alumni';
+                                          }
+                                          return "";
+                                        },
+                                      ),
+                                      leftTitles: SideTitles(
+                                        interval: 20,
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          if (value.toInt() == 0)
+                                            return "";
+                                          else
+                                            return value.toInt().toString();
+                                        },
+                                      ),
+                                    ),
+                                    maxY: 100,
+                                    borderData: FlBorderData(
+                                      show: false,
+                                    ),
+                                    barGroups: barChartGroupData,
+                                  )))
+                            ],
+                          ),
+                        ),
+                        onTap: () {
+                          //gunakan navigator untuk panggil Prodi
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Prodi(
+                                        namaProdi: 'Fisika',
+                                      )));
+                        },
+                      ),
                     ]))));
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart' as PieChart;
+import 'berita.dart';
 
 class BerandaPage extends StatefulWidget {
   const BerandaPage({Key? key}) : super(key: key);
@@ -15,7 +16,6 @@ final List<String> carouselImgs = [
 ];
 
 class _BerandaPageState extends State<BerandaPage> {
-  
   Map<String, double> dataMap = {
     "Mahasiswa": 8000,
     "Dosen": 500,
@@ -43,32 +43,32 @@ class _BerandaPageState extends State<BerandaPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             StatefulBuilder(
-              builder: (context, setState) => SizedBox(
-                height: 200,
-                child: PageView.builder(
-                  itemCount: 3,
-                  itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Container(
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                          color: Colors.primaries[index],
-                          borderRadius: BorderRadius.circular(16),
-                          image: DecorationImage(
-                            image: AssetImage(carouselImgs[index]),
-                            fit: BoxFit.cover,
-                          )),
-                    ),
-                  ),
-                ),
-              )
-            ),
+                builder: (context, setState) => SizedBox(
+                      height: 200,
+                      child: PageView.builder(
+                        itemCount: 3,
+                        itemBuilder: (context, index) => Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Container(
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                                color: Colors.primaries[index],
+                                borderRadius: BorderRadius.circular(16),
+                                image: DecorationImage(
+                                  image: AssetImage(carouselImgs[index]),
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                        ),
+                      ),
+                    )),
             const SizedBox(height: 12),
             Card(
               child: Column(
                 children: [
                   const ListTile(
-                    title: Center(child: Text('Rasio Warga UPI')),
+                    title: Center(
+                        child: Text('Rasio Warga UPI berdasarkan status')),
                   ),
                   Container(
                     padding: const EdgeInsets.all(30),
@@ -97,62 +97,25 @@ class _BerandaPageState extends State<BerandaPage> {
             ),
             const Padding(
               padding: EdgeInsets.all(8),
-              child: Text('Berita', style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold
-              )),
+              child: Text('Berita',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             ),
             Wrap(
               spacing: 16,
               children: [
                 Card(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Ink.image(
-                            height: 200,
-                            fit: BoxFit.cover,
-                            image: const AssetImage(
-                              'assets/gedung_isola.jpeg',
-                            ),
-                          ),
-                          const SizedBox(height: 12),
-                          const Text('Start to Learn and Master \nSoft Skills as a Student'),
-                        ],
-                      )
-                    ),
-                  )
-                ),
-                Card(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Ink.image(
-                            height: 200,
-                            fit: BoxFit.cover,
-                            image: const AssetImage(
-                              'assets/gedung_isola.jpeg',
-                            ),
-                          ),
-                          const SizedBox(height: 12),
-                          const Text('Is Blended Learning Effective\nat UPI?'),
-                        ],
-                      )
-                    ),
-                  )
-                ),
-                Card(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Padding(
+                    child: InkWell(
+                  onTap: () {
+                    //gunakan navigator untuk panggil Prodi
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Berita(
+                                  namaBerita:
+                                      'Start to Learn and Master Soft Skills as a Student',
+                                )));
+                  },
+                  child: Padding(
                       padding: const EdgeInsets.all(12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -166,16 +129,52 @@ class _BerandaPageState extends State<BerandaPage> {
                           ),
                           const SizedBox(height: 12),
                           const Text(
-                              'Chemistry Education Online \nEvents at UPI in 2021'),
+                              'Start to Learn and Master Soft Skills as a Student'),
                         ],
-                      )
-                    ),
-                  )
-                ),
+                      )),
+                )),
                 Card(
-                  child: InkWell(
-                    onTap: () {},
-                    child: Padding(
+                    child: InkWell(
+                  onTap: () {
+                    //gunakan navigator untuk panggil Prodi
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Berita(
+                                  namaBerita:
+                                      'Is Blended Learning Effective at UPI?',
+                                )));
+                  },
+                  child: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Ink.image(
+                            height: 200,
+                            fit: BoxFit.cover,
+                            image: const AssetImage(
+                              'assets/gedung_isola.jpeg',
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          const Text('Is Blended Learning Effective at UPI?'),
+                        ],
+                      )),
+                )),
+                Card(
+                    child: InkWell(
+                  onTap: () {
+                    //gunakan navigator untuk panggil Prodi
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Berita(
+                                  namaBerita:
+                                      'Chemistry Education Online Events at UPI in 2021',
+                                )));
+                  },
+                  child: Padding(
                       padding: const EdgeInsets.all(12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -189,12 +188,40 @@ class _BerandaPageState extends State<BerandaPage> {
                           ),
                           const SizedBox(height: 12),
                           const Text(
-                              'Students’ Thoughts on \nExtracurricular Activities'),
+                              'Chemistry Education Online Events at UPI in 2021'),
                         ],
-                      )
-                    ),
-                  )
-                ),
+                      )),
+                )),
+                Card(
+                    child: InkWell(
+                  onTap: () {
+                    //gunakan navigator untuk panggil Prodi
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Berita(
+                                  namaBerita:
+                                      'Students’ Thoughts on Extracurricular Activities',
+                                )));
+                  },
+                  child: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Ink.image(
+                            height: 200,
+                            fit: BoxFit.cover,
+                            image: const AssetImage(
+                              'assets/gedung_isola.jpeg',
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          const Text(
+                              'Students’ Thoughts on Extracurricular Activities'),
+                        ],
+                      )),
+                )),
               ],
             ),
           ],
