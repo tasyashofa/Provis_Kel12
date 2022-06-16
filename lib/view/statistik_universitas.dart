@@ -54,9 +54,9 @@ class _StatistikUniversitasPageState extends State<StatistikUniversitasPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Expanded(
-                        child: Card(
-                          color: Color.fromARGB(255, 216, 237, 255),
-                          child: Padding(
+                        child: Container(
+                          color: const Color.fromARGB(255, 216, 237, 255),
+                          child: const Padding(
                             padding: EdgeInsets.all(5),
                             child: ListTile(
                               leading: Icon(Icons.man),
@@ -67,9 +67,9 @@ class _StatistikUniversitasPageState extends State<StatistikUniversitasPage> {
                         ),
                       ),
                       Expanded(
-                        child: Card(
-                          color: Color.fromARGB(255, 241, 214, 223),
-                          child: Padding(
+                        child: Container(
+                          color: const Color.fromARGB(255, 241, 214, 223),
+                          child: const Padding(
                             padding: EdgeInsets.all(5),
                             child: ListTile(
                               leading: Icon(Icons.woman),
@@ -84,59 +84,57 @@ class _StatistikUniversitasPageState extends State<StatistikUniversitasPage> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             Card(
-              child: Expanded(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Center(child: Text('Jumlah Mahasiswa')),
-                    ),
-                    Container(
-                        padding: EdgeInsets.all(30),
-                        width: MediaQuery.of(context).size.width,
-                        height: 250,
-                        child: BarChart(BarChartData(
-                          titlesData: FlTitlesData(
-                            topTitles: SideTitles(showTitles: false),
-                            rightTitles: SideTitles(showTitles: false),
-                            bottomTitles: SideTitles(
-                              showTitles: true,
-                              getTitles: (value) {
-                                switch (value.toInt()) {
-                                  case 1:
-                                    return 'Beasiswa';
-                                  case 2:
-                                    return 'Prestasi';
-                                  case 3:
-                                    return 'MBKM';
-                                  case 4:
-                                    return 'Pertukaran Mahasiswa';
-                                }
+              child: Column(
+                children: [
+                  const ListTile(
+                    title: Center(child: Text('Jumlah Mahasiswa')),
+                  ),
+                  Container(
+                      padding: const EdgeInsets.all(30),
+                      width: MediaQuery.of(context).size.width,
+                      height: 250,
+                      child: BarChart(BarChartData(
+                        titlesData: FlTitlesData(
+                          topTitles: SideTitles(showTitles: false),
+                          rightTitles: SideTitles(showTitles: false),
+                          bottomTitles: SideTitles(
+                            showTitles: true,
+                            getTitles: (value) {
+                              switch (value.toInt()) {
+                                case 1:
+                                  return 'Beasiswa';
+                                case 2:
+                                  return 'Prestasi';
+                                case 3:
+                                  return 'MBKM';
+                                case 4:
+                                  return 'Pertukaran Mahasiswa';
+                              }
+                              return "";
+                            },
+                          ),
+                          leftTitles: SideTitles(
+                            interval: 20,
+                            showTitles: true,
+                            getTitles: (value) {
+                              if (value.toInt() == 0)
                                 return "";
-                              },
-                            ),
-                            leftTitles: SideTitles(
-                              interval: 20,
-                              showTitles: true,
-                              getTitles: (value) {
-                                if (value.toInt() == 0)
-                                  return "";
-                                else
-                                  return value.toInt().toString();
-                              },
-                            ),
+                              else
+                                return value.toInt().toString();
+                            },
                           ),
-                          maxY: 100,
-                          borderData: FlBorderData(
-                            show: false,
-                          ),
-                          barGroups: barChartGroupData,
-                        )))
-                  ],
-                ),
+                        ),
+                        maxY: 100,
+                        borderData: FlBorderData(
+                          show: false,
+                        ),
+                        barGroups: barChartGroupData,
+                      )))
+                ],
               ),
             ),
           ],

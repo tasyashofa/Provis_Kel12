@@ -35,96 +35,85 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
             child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Container(
-                          padding: const EdgeInsets.all(14),
-                          child: Column(
-                            children: [
-                              Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Card(
-                                        child: Padding(
-                                            padding: EdgeInsets.all(12),
-                                            child: Column(
-                                              children: [
-                                                Image.network(
-                                                  'assets/logo_upi.png',
-                                                  width: 100,
-                                                ),
-                                                Text('Matematika'),
-                                              ],
-                                            ))),
-                                    Card(
-                                        child: Padding(
-                                            padding: EdgeInsets.all(12),
-                                            child: Column(
-                                              children: [
-                                                Image.network(
-                                                  'assets/logo_upi.png',
-                                                  width: 100,
-                                                ),
-                                                Text('Fisika'),
-                                              ],
-                                            ))),
-                                    Card(
-                                        child: Padding(
-                                            padding: EdgeInsets.all(12),
-                                            child: Column(
-                                              children: [
-                                                Image.network(
-                                                  'assets/logo_upi.png',
-                                                  width: 100,
-                                                ),
-                                                Text('IPSE'),
-                                              ],
-                                            ))),
-                                  ]),
-                              Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Card(
-                                        child: Padding(
-                                            padding: EdgeInsets.all(12),
-                                            child: Column(
-                                              children: [
-                                                Image.network(
-                                                  'assets/logo_upi.png',
-                                                  width: 100,
-                                                ),
-                                                Text('Kimia'),
-                                              ],
-                                            ))),
-                                    Card(
-                                        child: Padding(
-                                            padding: EdgeInsets.all(12),
-                                            child: Column(
-                                              children: [
-                                                Image.network(
-                                                  'assets/logo_upi.png',
-                                                  width: 100,
-                                                ),
-                                                Text('Biologi'),
-                                              ],
-                                            ))),
-                                    Card(
-                                        child: Padding(
-                                            padding: EdgeInsets.all(12),
-                                            child: Column(
-                                              children: [
-                                                Image.network(
-                                                  'assets/logo_upi.png',
-                                                  width: 100,
-                                                ),
-                                                Text('Ilkom'),
-                                              ],
-                                            ))),
-                                  ]),
-                            ],
-                          )),
+                      Card(
+                        child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/logo_upi.png',
+                                  width: 100,
+                                ),
+                                const Text('Matematika'),
+                              ],
+                            ))),
+                    Card(
+                        child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/logo_upi.png',
+                                  width: 100,
+                                ),
+                                const SizedBox(height: 10),
+                                const Text('Fisika'),
+                              ],
+                            ))),
+                    Card(
+                        child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/logo_upi.png',
+                                  width: 100,
+                                ),
+                                const SizedBox(height: 10),
+                                const Text('IPSE'),
+                              ],
+                            ))),
+                      Card(
+                        child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/logo_upi.png',
+                                  width: 100,
+                                ),
+                                const SizedBox(height: 10),
+                                const Text('Kimia'),
+                              ],
+                            ))),
+                    Card(
+                        child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/logo_upi.png',
+                                  width: 100,
+                                ),
+                                const SizedBox(height: 10),
+                                const Text('Biologi'),
+                              ],
+                            ))),
+                    Card(
+                        child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/logo_upi.png',
+                                  width: 100,
+                                ),
+                                const SizedBox(height: 10),
+                                const Text('Ilkom'),
+                              ],
+                            ))),
                     ]))));
   }
 }

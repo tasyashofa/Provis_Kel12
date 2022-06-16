@@ -45,7 +45,7 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(height: 12,),
+            const SizedBox(height: 12,),
             Card(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -60,9 +60,9 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Expanded(
-                        child: Card(
-                          color: Color.fromARGB(255, 216, 237, 255),
-                          child: Padding(
+                        child: Container(
+                          color: const Color.fromARGB(255, 216, 237, 255),
+                          child: const Padding(
                             padding: EdgeInsets.all(5),
                             child: ListTile(
                               leading: Icon(Icons.man),
@@ -73,9 +73,9 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
                         ),
                       ),
                       Expanded(
-                        child: Card(
-                          color: Color.fromARGB(255, 241, 214, 223),
-                          child: Padding(
+                        child: Container(
+                          color: const Color.fromARGB(255, 241, 214, 223),
+                          child: const Padding(
                             padding: EdgeInsets.all(5),
                             child: ListTile(
                               leading: Icon(Icons.woman),
@@ -94,62 +94,60 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
               height: 12,
             ),
             Card(
-              child: Expanded(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Center(child: Text('Jumlah Alumni Berdasarkan Fakultas')),
-                     
-                    ),
-                    Container(
-                    padding: EdgeInsets.all(30),
-                    width: MediaQuery.of(context).size.width,
-                    height: 250,
-                    child: BarChart(BarChartData(
-                      titlesData: FlTitlesData(
-                        topTitles: SideTitles(showTitles: false),
-                        rightTitles: SideTitles(showTitles: false),
-                        bottomTitles: SideTitles(
-                          showTitles: true,
-                          getTitles: (value) {
-                            switch (value.toInt()) {
-                              case 1:
-                                return 'FPMIPA';
-                              case 2:
-                                return 'FIP';
-                              case 3:
-                                return 'FPIPS';
-                              case 4:
-                                return 'FPSD';
-                              case 5:
-                                return 'FPEB';
-                              case 6:
-                                return 'FPBS';
-                              case 7:
-                                return 'FPOK';
-                            }
+              child: Column(
+                children: [
+                  const ListTile(
+                    title: Center(child: Text('Jumlah Alumni Berdasarkan Fakultas')),
+                   
+                  ),
+                  Container(
+                  padding: EdgeInsets.all(30),
+                  width: MediaQuery.of(context).size.width,
+                  height: 250,
+                  child: BarChart(BarChartData(
+                    titlesData: FlTitlesData(
+                      topTitles: SideTitles(showTitles: false),
+                      rightTitles: SideTitles(showTitles: false),
+                      bottomTitles: SideTitles(
+                        showTitles: true,
+                        getTitles: (value) {
+                          switch (value.toInt()) {
+                            case 1:
+                              return 'FPMIPA';
+                            case 2:
+                              return 'FIP';
+                            case 3:
+                              return 'FPIPS';
+                            case 4:
+                              return 'FPSD';
+                            case 5:
+                              return 'FPEB';
+                            case 6:
+                              return 'FPBS';
+                            case 7:
+                              return 'FPOK';
+                          }
+                          return "";
+                        },
+                      ),
+                      leftTitles: SideTitles(
+                        interval: 20,
+                        showTitles: true,
+                        getTitles: (value) {
+                          if (value.toInt() == 0)
                             return "";
-                          },
-                        ),
-                        leftTitles: SideTitles(
-                          interval: 20,
-                          showTitles: true,
-                          getTitles: (value) {
-                            if (value.toInt() == 0)
-                              return "";
-                            else
-                              return value.toInt().toString();
-                          },
-                        ),
+                          else
+                            return value.toInt().toString();
+                        },
                       ),
-                      maxY: 100,
-                      borderData: FlBorderData(
-                        show: false,
-                      ),
-                      barGroups: barChartGroupData,
-                    )))
-                  ],
-                ),
+                    ),
+                    maxY: 100,
+                    borderData: FlBorderData(
+                      show: false,
+                    ),
+                    barGroups: barChartGroupData,
+                  )))
+                ],
               ),
             ),
             

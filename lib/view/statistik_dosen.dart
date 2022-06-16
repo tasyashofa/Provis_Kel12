@@ -105,9 +105,9 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Expanded(
-                            child: Card(
-                              color: Color.fromARGB(255, 216, 237, 255),
-                              child: Padding(
+                            child: Container(
+                              color: const Color.fromARGB(255, 216, 237, 255),
+                              child: const Padding(
                                 padding: EdgeInsets.all(5),
                                 child: ListTile(
                                   leading: Icon(Icons.man),
@@ -118,9 +118,9 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                             ),
                           ),
                           Expanded(
-                            child: Card(
-                              color: Color.fromARGB(255, 241, 214, 223),
-                              child: Padding(
+                            child: Container(
+                              color: const Color.fromARGB(255, 241, 214, 223),
+                              child: const Padding(
                                 padding: EdgeInsets.all(5),
                                 child: ListTile(
                                   leading: Icon(Icons.woman),
@@ -139,98 +139,94 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                   height: 12,
                 ),
                 Card(
-                  child: Expanded(
-                    child: Column(
-                      children: [
-                        ListTile(
-                          title: Center(
-                              child: Text('Jumlah Dosen Berdasarkan Fakultas')),
-                        ),
-                        Container(
-                            padding: EdgeInsets.all(30),
-                            width: MediaQuery.of(context).size.width,
-                            height: 250,
-                            child: BarChart(BarChartData(
-                              titlesData: FlTitlesData(
-                                topTitles: SideTitles(showTitles: false),
-                                rightTitles: SideTitles(showTitles: false),
-                                bottomTitles: SideTitles(
-                                  showTitles: true,
-                                  getTitles: (value) {
-                                    switch (value.toInt()) {
-                                      case 1:
-                                        return 'Tenaga\nPengajar';
-                                      case 2:
-                                        return 'Asisten\nAhli';
-                                      case 3:
-                                        return 'Lektor';
-                                      case 4:
-                                        return 'Lektor\nKepala';
-                                      case 5:
-                                        return 'Guru\nBesar';
-                                    }
+                  child: Column(
+                    children: [
+                      const ListTile(
+                        title: Center(
+                            child: Text('Jumlah Dosen Berdasarkan Fakultas')),
+                      ),
+                      Container(
+                          padding: EdgeInsets.all(30),
+                          width: MediaQuery.of(context).size.width,
+                          height: 250,
+                          child: BarChart(BarChartData(
+                            titlesData: FlTitlesData(
+                              topTitles: SideTitles(showTitles: false),
+                              rightTitles: SideTitles(showTitles: false),
+                              bottomTitles: SideTitles(
+                                showTitles: true,
+                                getTitles: (value) {
+                                  switch (value.toInt()) {
+                                    case 1:
+                                      return 'Tenaga\nPengajar';
+                                    case 2:
+                                      return 'Asisten\nAhli';
+                                    case 3:
+                                      return 'Lektor';
+                                    case 4:
+                                      return 'Lektor\nKepala';
+                                    case 5:
+                                      return 'Guru\nBesar';
+                                  }
+                                  return "";
+                                },
+                              ),
+                              leftTitles: SideTitles(
+                                interval: 20,
+                                showTitles: true,
+                                getTitles: (value) {
+                                  if (value.toInt() == 0)
                                     return "";
-                                  },
-                                ),
-                                leftTitles: SideTitles(
-                                  interval: 20,
-                                  showTitles: true,
-                                  getTitles: (value) {
-                                    if (value.toInt() == 0)
-                                      return "";
-                                    else
-                                      return value.toInt().toString();
-                                  },
-                                ),
+                                  else
+                                    return value.toInt().toString();
+                                },
                               ),
-                              maxY: 100,
-                              borderData: FlBorderData(
-                                show: false,
-                              ),
-                              barGroups: barChartGroupData,
-                            )))
-                      ],
-                    ),
+                            ),
+                            maxY: 100,
+                            borderData: FlBorderData(
+                              show: false,
+                            ),
+                            barGroups: barChartGroupData,
+                          )))
+                    ],
                   ),
                 ),
                 SizedBox(
                   height: 12,
                 ),
                 Card(
-                  child: Expanded(
-                    child: Column(
-                      children: [
-                        ListTile(
-                          title: Center(
-                              child: Text(
-                                  'Rasio Dosen Berdasarkan Jenjang Pendidikan Terakhir')),
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: Center(
+                            child: Text(
+                                'Rasio Dosen Berdasarkan Jenjang Pendidikan Terakhir')),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(30),
+                        width: MediaQuery.of(context).size.width,
+                        height: 250,
+                        child: PieChart.PieChart(
+                          dataMap: dataMap,
+                          colorList: colorList,
+                          chartRadius: MediaQuery.of(context).size.width / 2,
+                          ringStrokeWidth: 32,
+                          animationDuration: const Duration(seconds: 3),
+                          chartValuesOptions:
+                              const PieChart.ChartValuesOptions(
+                                  showChartValues: true,
+                                  showChartValuesOutside: true,
+                                  showChartValuesInPercentage: true,
+                                  showChartValueBackground: false),
+                          legendOptions: const PieChart.LegendOptions(
+                              showLegends: true,
+                              legendShape: BoxShape.rectangle,
+                              legendTextStyle: TextStyle(fontSize: 15),
+                              legendPosition: PieChart.LegendPosition.right,
+                              showLegendsInRow: false),
                         ),
-                        Container(
-                          padding: EdgeInsets.all(30),
-                          width: MediaQuery.of(context).size.width,
-                          height: 250,
-                          child: PieChart.PieChart(
-                            dataMap: dataMap,
-                            colorList: colorList,
-                            chartRadius: MediaQuery.of(context).size.width / 2,
-                            ringStrokeWidth: 32,
-                            animationDuration: const Duration(seconds: 3),
-                            chartValuesOptions:
-                                const PieChart.ChartValuesOptions(
-                                    showChartValues: true,
-                                    showChartValuesOutside: true,
-                                    showChartValuesInPercentage: true,
-                                    showChartValueBackground: false),
-                            legendOptions: const PieChart.LegendOptions(
-                                showLegends: true,
-                                legendShape: BoxShape.rectangle,
-                                legendTextStyle: TextStyle(fontSize: 15),
-                                legendPosition: PieChart.LegendPosition.right,
-                                showLegendsInRow: false),
-                          ),
-                        )
-                      ],
-                    ),
+                      )
+                    ],
                   ),
                 ),
               ],

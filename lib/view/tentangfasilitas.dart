@@ -31,10 +31,8 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
             children: [
               Expanded(
                 child: Card(
-                  elevation: 50,
                   shadowColor: Colors.black,
-                  child : SizedBox(width: 10, height: 380,
-                  child: Padding(
+                  child : Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
@@ -68,7 +66,6 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
                         ),
                       ],
                     ),
-                  ),
                   )
                 ),
                 ),]
@@ -88,10 +85,8 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
             children: [
               Expanded(
                 child: Card(
-                  elevation: 50,
                   shadowColor: Colors.black,
-                  child : SizedBox(width: 10, height: 380,
-                  child: Padding(
+                  child : Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
@@ -125,7 +120,6 @@ class _TentangFasilitasState extends State<TentangFasilitasPage> {
                         ),
                       ],
                     ),
-                  ),
                   )
                 ),
                 ),]
