@@ -43,7 +43,8 @@ class _StatistikFakultasPageState extends State<StatistikFakultasPage> {
                           child: Column(
                             children: [
                               const ListTile(
-                                title: Center(child: Text('Fakultas Ilmu Pendidikan')),
+                                title: Center(
+                                    child: Text('Fakultas Ilmu Pendidikan')),
                               ),
                               Container(
                                   padding: EdgeInsets.all(30),
@@ -97,7 +98,8 @@ class _StatistikFakultasPageState extends State<StatistikFakultasPage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => Fakultas(
-                                        namaFakultas: 'Fakultas Ilmu Pendidikan',
+                                        namaFakultas:
+                                            'Fakultas Ilmu Pendidikan',
                                       )));
                         },
                       ),
@@ -106,7 +108,9 @@ class _StatistikFakultasPageState extends State<StatistikFakultasPage> {
                           child: Column(
                             children: [
                               const ListTile(
-                                title: Center(child: Text('Fakultas Pendidikan Ilmu Pengetahuan Sosial')),
+                                title: Center(
+                                    child: Text(
+                                        'Fakultas Pendidikan Ilmu Pengetahuan Sosial')),
                               ),
                               Container(
                                   padding: EdgeInsets.all(30),
@@ -160,7 +164,8 @@ class _StatistikFakultasPageState extends State<StatistikFakultasPage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => Fakultas(
-                                        namaFakultas: 'Fakultas Pendidikan Ilmu Pengetahuan Sosial',
+                                        namaFakultas:
+                                            'Fakultas Pendidikan Ilmu Pengetahuan Sosial',
                                       )));
                         },
                       ),
@@ -169,7 +174,9 @@ class _StatistikFakultasPageState extends State<StatistikFakultasPage> {
                           child: Column(
                             children: [
                               const ListTile(
-                                title: Center(child: Text('Fakultas Pendidikan Bahasa dan Sastra')),
+                                title: Center(
+                                    child: Text(
+                                        'Fakultas Pendidikan Bahasa dan Sastra')),
                               ),
                               Container(
                                   padding: EdgeInsets.all(30),
@@ -223,7 +230,8 @@ class _StatistikFakultasPageState extends State<StatistikFakultasPage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => Fakultas(
-                                        namaFakultas: 'Fakultas Pendidikan Bahasa dan Sastra',
+                                        namaFakultas:
+                                            'Fakultas Pendidikan Bahasa dan Sastra',
                                       )));
                         },
                       ),
@@ -232,69 +240,9 @@ class _StatistikFakultasPageState extends State<StatistikFakultasPage> {
                           child: Column(
                             children: [
                               const ListTile(
-                                title: Center(child: Text('Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam')),
-                              ),
-                              Container(
-                                  padding: EdgeInsets.all(30),
-                                  width: MediaQuery.of(context).size.width,
-                                  height: 150,
-                                  child: BarChart(BarChartData(
-                                    titlesData: FlTitlesData(
-                                      topTitles: SideTitles(showTitles: false),
-                                      rightTitles:
-                                          SideTitles(showTitles: false),
-                                      bottomTitles: SideTitles(
-                                        showTitles: true,
-                                        getTitles: (value) {
-                                          switch (value.toInt()) {
-                                            case 1:
-                                              return 'Mahasiswa';
-                                            case 2:
-                                              return 'Dosen';
-                                            case 3:
-                                              return 'Tendik';
-                                            case 4:
-                                              return 'Alumni';
-                                          }
-                                          return "";
-                                        },
-                                      ),
-                                      leftTitles: SideTitles(
-                                        interval: 200,
-                                        showTitles: true,
-                                        getTitles: (value) {
-                                          if (value.toInt() == 0)
-                                            return "";
-                                          else
-                                            return value.toInt().toString();
-                                        },
-                                      ),
-                                    ),
-                                    maxY: 800,
-                                    borderData: FlBorderData(
-                                      show: false,
-                                    ),
-                                    barGroups: barChartGroupData,
-                                  )))
-                            ],
-                          ),
-                        ),
-                        onTap: () {
-                          //gunakan navigator untuk panggil Prodi
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Fakultas(
-                                        namaFakultas: 'Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam',
-                                      )));
-                        },
-                      ),
-                      InkWell(
-                        child: Card(
-                          child: Column(
-                            children: [
-                              const ListTile(
-                                title: Center(child: Text('Fakultas Pendidikan Teknologi dan Kejuruan')),
+                                title: Center(
+                                    child: Text(
+                                        'Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam')),
                               ),
                               Container(
                                   padding: EdgeInsets.all(30),
@@ -348,7 +296,74 @@ class _StatistikFakultasPageState extends State<StatistikFakultasPage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => Fakultas(
-                                        namaFakultas: 'Fakultas Pendidikan Teknologi dan Kejuruan',
+                                        namaFakultas:
+                                            'Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam',
+                                      )));
+                        },
+                      ),
+                      InkWell(
+                        child: Card(
+                          child: Column(
+                            children: [
+                              const ListTile(
+                                title: Center(
+                                    child: Text(
+                                        'Fakultas Pendidikan Teknologi dan Kejuruan')),
+                              ),
+                              Container(
+                                  padding: EdgeInsets.all(30),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 150,
+                                  child: BarChart(BarChartData(
+                                    titlesData: FlTitlesData(
+                                      topTitles: SideTitles(showTitles: false),
+                                      rightTitles:
+                                          SideTitles(showTitles: false),
+                                      bottomTitles: SideTitles(
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          switch (value.toInt()) {
+                                            case 1:
+                                              return 'Mahasiswa';
+                                            case 2:
+                                              return 'Dosen';
+                                            case 3:
+                                              return 'Tendik';
+                                            case 4:
+                                              return 'Alumni';
+                                          }
+                                          return "";
+                                        },
+                                      ),
+                                      leftTitles: SideTitles(
+                                        reservedSize: 40,
+                                        interval: 200,
+                                        showTitles: true,
+                                        getTitles: (value) {
+                                          if (value.toInt() == 0)
+                                            return "";
+                                          else
+                                            return value.toInt().toString();
+                                        },
+                                      ),
+                                    ),
+                                    maxY: 800,
+                                    borderData: FlBorderData(
+                                      show: false,
+                                    ),
+                                    barGroups: barChartGroupData,
+                                  )))
+                            ],
+                          ),
+                        ),
+                        onTap: () {
+                          //gunakan navigator untuk panggil Prodi
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Fakultas(
+                                        namaFakultas:
+                                            'Fakultas Pendidikan Teknologi dan Kejuruan',
                                       )));
                         },
                       ),

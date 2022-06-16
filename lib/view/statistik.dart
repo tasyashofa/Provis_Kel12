@@ -5,7 +5,6 @@ import 'statistik_mahasiswa.dart';
 import 'statistik_dosen.dart';
 import 'statistik_prodi.dart';
 import 'statistik_fakultas.dart';
-import 'statistik_universitas.dart';
 
 class StatistikPage extends StatefulWidget {
   const StatistikPage({Key? key}) : super(key: key);
@@ -80,15 +79,6 @@ class _StatistikPageState extends State<StatistikPage> {
                           builder: (context) => StatistikProdiPage()));
                 },
                 child: const Text('PRODI')),
-            const SizedBox(height: 12),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => StatistikUniversitasPage()));
-                },
-                child: const Text('UNIVERSITAS')),
           ],
         ),
       ),
