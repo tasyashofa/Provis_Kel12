@@ -11,13 +11,13 @@ class StatistikFakultasPage extends StatefulWidget {
 
 List<BarChartGroupData> barChartGroupData = [
   BarChartGroupData(x: 1, barRods: [
-    BarChartRodData(y: 80, colors: [Colors.black]),
+    BarChartRodData(y: 520, colors: [Colors.black]),
   ]),
   BarChartGroupData(x: 2, barRods: [
-    BarChartRodData(y: 20, colors: [Colors.red]),
+    BarChartRodData(y: 420, colors: [Colors.red]),
   ]),
   BarChartGroupData(x: 3, barRods: [
-    BarChartRodData(y: 10, colors: [Colors.green]),
+    BarChartRodData(y: 610, colors: [Colors.green]),
   ]),
   BarChartGroupData(x: 4, barRods: [
     BarChartRodData(y: 600, colors: [Colors.blue]),
