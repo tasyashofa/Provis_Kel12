@@ -112,7 +112,7 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                                 child: ListTile(
                                   leading: Icon(Icons.man),
                                   title: Text('Lelaki'),
-                                  subtitle: Text('12000'),
+                                  subtitle: Text('2000'),
                                 ),
                               ),
                             ),
@@ -125,7 +125,7 @@ class _StatistikDosenPageState extends State<StatistikDosenPage> {
                                 child: ListTile(
                                   leading: Icon(Icons.woman),
                                   title: Text('Wanita'),
-                                  subtitle: Text('20000'),
+                                  subtitle: Text('4000'),
                                 ),
                               ),
                             ),

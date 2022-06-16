@@ -37,53 +37,6 @@ class _StatistikUniversitasPageState extends State<StatistikUniversitasPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: 12,
-            ),
-            Card(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const ListTile(
-                    title: Center(child: Text('Jenis Kelamin')),
-                    subtitle: Center(
-                        child:
-                            Text('Jumlah alumni berdasarkan jenis kelamin.')),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Expanded(
-                        child: Container(
-                          color: const Color.fromARGB(255, 216, 237, 255),
-                          child: const Padding(
-                            padding: EdgeInsets.all(5),
-                            child: ListTile(
-                              leading: Icon(Icons.man),
-                              title: Text('Lelaki'),
-                              subtitle: Text('7777'),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          color: const Color.fromARGB(255, 241, 214, 223),
-                          child: const Padding(
-                            padding: EdgeInsets.all(5),
-                            child: ListTile(
-                              leading: Icon(Icons.woman),
-                              title: Text('Wanita'),
-                              subtitle: Text('7676'),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
             const SizedBox(
               height: 12,
             ),
@@ -112,7 +65,7 @@ class _StatistikUniversitasPageState extends State<StatistikUniversitasPage> {
                                 case 3:
                                   return 'MBKM';
                                 case 4:
-                                  return 'Pertukaran Mahasiswa';
+                                  return 'Pertukaran\nMahasiswa';
                               }
                               return "";
                             },

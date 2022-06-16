@@ -28,6 +28,12 @@ class Prodi extends StatelessWidget {
     "Laboratorium": 6,
   };
 
+  Map<String, double> dataPrestasi = {
+    "Lomba": 30,
+    "Organisasi": 20,
+    "KTI": 10,
+  };
+
   List<Color> colorList = [
     const Color(0xff3EE094),
     const Color(0xff3398F6),
@@ -118,6 +124,38 @@ class Prodi extends StatelessWidget {
                     height: 250,
                     child: PieChart.PieChart(
                       dataMap: dataMap,
+                      colorList: colorList,
+                      chartRadius: MediaQuery.of(context).size.width / 2,
+                      ringStrokeWidth: 32,
+                      animationDuration: const Duration(seconds: 3),
+                      chartValuesOptions: const PieChart.ChartValuesOptions(
+                          showChartValues: true,
+                          showChartValuesOutside: true,
+                          showChartValuesInPercentage: true,
+                          showChartValueBackground: false),
+                      legendOptions: const PieChart.LegendOptions(
+                          showLegends: true,
+                          legendShape: BoxShape.rectangle,
+                          legendTextStyle: TextStyle(fontSize: 15),
+                          legendPosition: PieChart.LegendPosition.right,
+                          showLegendsInRow: false),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            Card(
+              child: Column(
+                children: [
+                  const ListTile(
+                    title: Center(child: Text('Rasio Prestasi Mahasiswa')),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(30),
+                    height: 250,
+                    child: PieChart.PieChart(
+                      dataMap: dataPrestasi,
                       colorList: colorList,
                       chartRadius: MediaQuery.of(context).size.width / 2,
                       ringStrokeWidth: 32,

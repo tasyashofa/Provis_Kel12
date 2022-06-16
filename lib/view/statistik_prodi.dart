@@ -82,7 +82,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 1000,
+                                    maxY: 800,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),
@@ -145,7 +145,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 1000,
+                                    maxY: 800,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),
@@ -208,7 +208,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 1000,
+                                    maxY: 800,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),
@@ -270,7 +270,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 1000,
+                                    maxY: 800,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),
@@ -333,7 +333,7 @@ class _StatistikProdiPageState extends State<StatistikProdiPage> {
                                         },
                                       ),
                                     ),
-                                    maxY: 1000,
+                                    maxY: 800,
                                     borderData: FlBorderData(
                                       show: false,
                                     ),

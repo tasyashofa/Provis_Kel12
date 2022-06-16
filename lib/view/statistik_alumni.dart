@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:pie_chart/pie_chart.dart' as PieChart;
 
 class StatistikAlumniPage extends StatefulWidget {
   const StatistikAlumniPage({Key? key}) : super(key: key);
@@ -13,26 +14,32 @@ List<BarChartGroupData> barChartGroupData = [
     BarChartRodData(y: 20, colors: [Colors.black]),
   ]),
   BarChartGroupData(x: 2, barRods: [
-    BarChartRodData(y: 30, colors: [Colors.red]),
+    BarChartRodData(y: 1000, colors: [Colors.red]),
   ]),
   BarChartGroupData(x: 3, barRods: [
-    BarChartRodData(y: 25, colors: [Colors.green]),
+    BarChartRodData(y: 2500, colors: [Colors.green]),
   ]),
   BarChartGroupData(x: 4, barRods: [
-    BarChartRodData(y: 40, colors: [Colors.blue]),
+    BarChartRodData(y: 4000, colors: [Colors.blue]),
   ]),
   BarChartGroupData(x: 5, barRods: [
-    BarChartRodData(y: 50, colors: [Colors.yellow]),
+    BarChartRodData(y: 1500, colors: [Colors.yellow]),
   ]),
   BarChartGroupData(x: 6, barRods: [
-    BarChartRodData(y: 23, colors: [Colors.orange]),
-  ]),
-  BarChartGroupData(x: 7, barRods: [
-    BarChartRodData(y: 60, colors: [Colors.pink]),
+    BarChartRodData(y: 3000, colors: [Colors.orange]),
   ]),
 ];
 
 class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
+  Map<String, double> dataMap = {
+    "Pemerintahan": 10000,
+    "Swasta": 5000,
+  };
+
+  List<Color> colorList = [
+    const Color(0xff3EE094),
+    const Color(0xff3398F6),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,14 +47,11 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
         title: const Text('Statistik Alumni'),
         foregroundColor: Colors.white,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(
-              height: 12,
-            ),
             Card(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -69,7 +73,7 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
                             child: ListTile(
                               leading: Icon(Icons.man),
                               title: Text('Lelaki'),
-                              subtitle: Text('7777'),
+                              subtitle: Text('100000'),
                             ),
                           ),
                         ),
@@ -82,7 +86,7 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
                             child: ListTile(
                               leading: Icon(Icons.woman),
                               title: Text('Wanita'),
-                              subtitle: Text('7676'),
+                              subtitle: Text('150000'),
                             ),
                           ),
                         ),
@@ -100,7 +104,8 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
                 children: [
                   const ListTile(
                     title: Center(
-                        child: Text('Jumlah Alumni Berdasarkan Fakultas')),
+                        child: Text(
+                            'Jumlah Pekerjaan Alumni berdasarkan Jenis Perusahaan')),
                   ),
                   Container(
                       padding: EdgeInsets.all(30),
@@ -115,26 +120,24 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
                             getTitles: (value) {
                               switch (value.toInt()) {
                                 case 1:
-                                  return 'FPMIPA';
+                                  return 'Perseoranngan';
                                 case 2:
-                                  return 'FIP';
+                                  return 'CV';
                                 case 3:
-                                  return 'FPIPS';
+                                  return 'PT';
                                 case 4:
-                                  return 'FPSD';
+                                  return 'Koperasi';
                                 case 5:
-                                  return 'FPEB';
+                                  return 'Firma';
                                 case 6:
-                                  return 'FPBS';
-                                case 7:
-                                  return 'FPOK';
+                                  return 'Persero';
                               }
                               return "";
                             },
                           ),
                           leftTitles: SideTitles(
                             reservedSize: 40,
-                            interval: 20,
+                            interval: 1000,
                             showTitles: true,
                             getTitles: (value) {
                               if (value.toInt() == 0)
@@ -144,12 +147,48 @@ class _StatistikAlumniPageState extends State<StatistikAlumniPage> {
                             },
                           ),
                         ),
-                        maxY: 100,
+                        maxY: 5000,
                         borderData: FlBorderData(
                           show: false,
                         ),
                         barGroups: barChartGroupData,
                       )))
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Card(
+              child: Column(
+                children: [
+                  ListTile(
+                    title: Center(
+                        child: Text('Rasio Alumni Berdasarkan Pekerjaan')),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(30),
+                    width: MediaQuery.of(context).size.width,
+                    height: 250,
+                    child: PieChart.PieChart(
+                      dataMap: dataMap,
+                      colorList: colorList,
+                      chartRadius: MediaQuery.of(context).size.width / 2,
+                      ringStrokeWidth: 32,
+                      animationDuration: const Duration(seconds: 3),
+                      chartValuesOptions: const PieChart.ChartValuesOptions(
+                          showChartValues: true,
+                          showChartValuesOutside: true,
+                          showChartValuesInPercentage: true,
+                          showChartValueBackground: false),
+                      legendOptions: const PieChart.LegendOptions(
+                          showLegends: true,
+                          legendShape: BoxShape.rectangle,
+                          legendTextStyle: TextStyle(fontSize: 15),
+                          legendPosition: PieChart.LegendPosition.right,
+                          showLegendsInRow: false),
+                    ),
+                  )
                 ],
               ),
             ),

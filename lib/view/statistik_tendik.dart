@@ -10,25 +10,25 @@ class StatistikTendikPage extends StatefulWidget {
 
 List<BarChartGroupData> barChartGroupData = [
   BarChartGroupData(x: 1, barRods: [
-    BarChartRodData(y: 20, colors: [Colors.black]),
+    BarChartRodData(y: 240, colors: [Colors.black]),
   ]),
   BarChartGroupData(x: 2, barRods: [
-    BarChartRodData(y: 30, colors: [Colors.red]),
+    BarChartRodData(y: 200, colors: [Colors.red]),
   ]),
   BarChartGroupData(x: 3, barRods: [
-    BarChartRodData(y: 25, colors: [Colors.green]),
+    BarChartRodData(y: 300, colors: [Colors.green]),
   ]),
   BarChartGroupData(x: 4, barRods: [
-    BarChartRodData(y: 40, colors: [Colors.blue]),
+    BarChartRodData(y: 250, colors: [Colors.blue]),
   ]),
   BarChartGroupData(x: 5, barRods: [
-    BarChartRodData(y: 50, colors: [Colors.yellow]),
+    BarChartRodData(y: 260, colors: [Colors.yellow]),
   ]),
   BarChartGroupData(x: 6, barRods: [
-    BarChartRodData(y: 23, colors: [Colors.orange]),
+    BarChartRodData(y: 230, colors: [Colors.orange]),
   ]),
   BarChartGroupData(x: 7, barRods: [
-    BarChartRodData(y: 60, colors: [Colors.pink]),
+    BarChartRodData(y: 260, colors: [Colors.pink]),
   ]),
 ];
 
@@ -45,9 +45,6 @@ class _StatistikTendikPageState extends State<StatistikTendikPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: 12,
-            ),
             Card(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -69,7 +66,7 @@ class _StatistikTendikPageState extends State<StatistikTendikPage> {
                             child: ListTile(
                               leading: Icon(Icons.man),
                               title: Text('Lelaki'),
-                              subtitle: Text('7777'),
+                              subtitle: Text('920'),
                             ),
                           ),
                         ),
@@ -82,7 +79,7 @@ class _StatistikTendikPageState extends State<StatistikTendikPage> {
                             child: ListTile(
                               leading: Icon(Icons.woman),
                               title: Text('Wanita'),
-                              subtitle: Text('7676'),
+                              subtitle: Text('1000'),
                             ),
                           ),
                         ),
@@ -134,7 +131,8 @@ class _StatistikTendikPageState extends State<StatistikTendikPage> {
                             },
                           ),
                           leftTitles: SideTitles(
-                            interval: 20,
+                            reservedSize: 30,
+                            interval: 50,
                             showTitles: true,
                             getTitles: (value) {
                               if (value.toInt() == 0)
@@ -144,7 +142,7 @@ class _StatistikTendikPageState extends State<StatistikTendikPage> {
                             },
                           ),
                         ),
-                        maxY: 100,
+                        maxY: 300,
                         borderData: FlBorderData(
                           show: false,
                         ),
