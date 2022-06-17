@@ -28,7 +28,7 @@ class _BerandaPageState extends State<BerandaPage> {
       autoPlay: true,
       enlargeCenterPage: true,
       aspectRatio: 2.0,
-    ),
+      ),
     
     items: imgSlider.map((fileImage) {
       return Container(
