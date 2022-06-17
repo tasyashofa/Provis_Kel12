@@ -23,6 +23,13 @@ class _BerandaPageState extends State<BerandaPage> {
     'gerbang_upi.jpeg',
   ];
   final CarouselSlider autoPlayImage = CarouselSlider(
+    options: CarouselOptions(
+      height: 150,
+      autoPlay: true,
+      enlargeCenterPage: true,
+      aspectRatio: 2.0,
+    ),
+    
     items: imgSlider.map((fileImage) {
       return Container(
         margin: EdgeInsets.all(5.0),
@@ -36,10 +43,8 @@ class _BerandaPageState extends State<BerandaPage> {
         ),
       );
     }).toList(),
-    height: 150,
-    autoPlay: true,
-    enlargeCenterPage: true,
-    aspectRatio: 2.0,
+    
+    
   );
 
   Map<String, double> dataMap = {
