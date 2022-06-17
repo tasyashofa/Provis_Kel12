@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart' as PieChart;
+import 'package:carousel_slider/carousel_slider.dart';
 import 'berita.dart';
 
 class BerandaPage extends StatefulWidget {
@@ -16,6 +17,31 @@ final List<String> carouselImgs = [
 ];
 
 class _BerandaPageState extends State<BerandaPage> {
+  static final List<String> imgSlider = [
+    'gedung_isola.jpeg',
+    'gedung_fpmipa.jpeg',
+    'gerbang_upi.jpeg',
+  ];
+  final CarouselSlider autoPlayImage = CarouselSlider(
+    items: imgSlider.map((fileImage) {
+      return Container(
+        margin: EdgeInsets.all(5.0),
+        child: ClipRRect(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          child: Image.asset(
+            'assets/${fileImage}',
+            width: 10000,
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    }).toList(),
+    height: 150,
+    autoPlay: true,
+    enlargeCenterPage: true,
+    aspectRatio: 2.0,
+  );
+
   Map<String, double> dataMap = {
     "Mahasiswa": 8000,
     "Dosen": 500,
@@ -42,26 +68,7 @@ class _BerandaPageState extends State<BerandaPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            StatefulBuilder(
-                builder: (context, setState) => SizedBox(
-                      height: 200,
-                      child: PageView.builder(
-                        itemCount: 3,
-                        itemBuilder: (context, index) => Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          child: Container(
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                                color: Colors.primaries[index],
-                                borderRadius: BorderRadius.circular(16),
-                                image: DecorationImage(
-                                  image: AssetImage(carouselImgs[index]),
-                                  fit: BoxFit.cover,
-                                )),
-                          ),
-                        ),
-                      ),
-                    )),
+            autoPlayImage,
             const SizedBox(height: 12),
             Card(
               child: Column(
@@ -127,7 +134,13 @@ class _BerandaPageState extends State<BerandaPage> {
                               'assets/gedung_isola.jpeg',
                             ),
                           ),
-                          const SizedBox(height: 12),
+                          Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Row(children: [
+                              Icon(Icons.calendar_month),
+                              Text('Minggu, 10 Juni 2022')
+                            ]),
+                          ),
                           const Text(
                               'Start to Learn and Master Soft Skills as a Student'),
                         ],
@@ -157,7 +170,13 @@ class _BerandaPageState extends State<BerandaPage> {
                               'assets/gedung_isola.jpeg',
                             ),
                           ),
-                          const SizedBox(height: 12),
+                          Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Row(children: [
+                              Icon(Icons.calendar_month),
+                              Text('Minggu, 10 Juni 2022')
+                            ]),
+                          ),
                           const Text('Is Blended Learning Effective at UPI?'),
                         ],
                       )),
@@ -186,7 +205,13 @@ class _BerandaPageState extends State<BerandaPage> {
                               'assets/gedung_isola.jpeg',
                             ),
                           ),
-                          const SizedBox(height: 12),
+                          Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Row(children: [
+                              Icon(Icons.calendar_month),
+                              Text('Minggu, 10 Juni 2022')
+                            ]),
+                          ),
                           const Text(
                               'Chemistry Education Online Events at UPI in 2021'),
                         ],
@@ -216,7 +241,13 @@ class _BerandaPageState extends State<BerandaPage> {
                               'assets/gedung_isola.jpeg',
                             ),
                           ),
-                          const SizedBox(height: 12),
+                          Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Row(children: [
+                              Icon(Icons.calendar_month),
+                              Text('Minggu, 10 Juni 2022')
+                            ]),
+                          ),
                           const Text(
                               'Students’ Thoughts on Extracurricular Activities'),
                         ],
